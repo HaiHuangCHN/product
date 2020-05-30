@@ -1,0 +1,869 @@
+2020-05-01 15:38:10.774  INFO 32072 --- [nio-8060-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-05-01 15:38:10.774  INFO 32072 --- [nio-8060-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2020-05-01 15:38:10.815  INFO 32072 --- [nio-8060-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 41 ms
+Hibernate: 
+    select
+        user0_.user_id as user_id1_10_,
+        user0_.created_at as created_2_10_,
+        user0_.updated_at as updated_3_10_,
+        user0_.first_name as first_na4_10_,
+        user0_.last_name as last_nam5_10_ 
+    from
+        user user0_ 
+    where
+        user0_.updated_at<? limit ?
+Hibernate: 
+    select
+        cart0_.cart_id as cart_id1_1_7_,
+        cart0_.created_at as created_2_1_7_,
+        cart0_.updated_at as updated_3_1_7_,
+        cart0_.channel as channel4_1_7_,
+        cart0_.currency_id as currency8_1_7_,
+        cart0_.quantity as quantity5_1_7_,
+        cart0_.status as status6_1_7_,
+        cart0_.total_amount as total_am7_1_7_,
+        cart0_.user_id as user_id9_1_7_,
+        currency1_.currency_id as currency1_5_0_,
+        currency1_.created_at as created_2_5_0_,
+        currency1_.updated_at as updated_3_5_0_,
+        currency1_.currency_code as currency4_5_0_,
+        currency1_.currency_name as currency5_5_0_,
+        currency1_.decimal_points as decimal_6_5_0_,
+        productite2_.cart_id as cart_id8_8_9_,
+        productite2_.product_item_id as product_1_8_9_,
+        productite2_.product_item_id as product_1_8_1_,
+        productite2_.created_at as created_2_8_1_,
+        productite2_.updated_at as updated_3_8_1_,
+        productite2_.cart_id as cart_id8_8_1_,
+        productite2_.catalogue_id as catalogu9_8_1_,
+        productite2_.channel as channel4_8_1_,
+        productite2_.currency_id as currenc10_8_1_,
+        productite2_.order_detail_id as order_d11_8_1_,
+        productite2_.quantity as quantity5_8_1_,
+        productite2_.status as status6_8_1_,
+        productite2_.total_amount as total_am7_8_1_,
+        catalogue3_.catalogue_id as catalogu1_3_2_,
+        catalogue3_.created_at as created_2_3_2_,
+        catalogue3_.updated_at as updated_3_3_2_,
+        catalogue3_.catagory as catagory4_3_2_,
+        catalogue3_.currency_id as currenc11_3_2_,
+        catalogue3_.display_name as display_5_3_2_,
+        catalogue3_.long_desc as long_des6_3_2_,
+        catalogue3_.price as price7_3_2_,
+        catalogue3_.quantity as quantity8_3_2_,
+        catalogue3_.short_desc as short_de9_3_2_,
+        catalogue3_.status as status10_3_2_,
+        currency4_.currency_id as currency1_5_3_,
+        currency4_.created_at as created_2_5_3_,
+        currency4_.updated_at as updated_3_5_3_,
+        currency4_.currency_code as currency4_5_3_,
+        currency4_.currency_name as currency5_5_3_,
+        currency4_.decimal_points as decimal_6_5_3_,
+        orderdetai5_.order_detail_id as order_de1_6_4_,
+        orderdetai5_.created_at as created_2_6_4_,
+        orderdetai5_.updated_at as updated_3_6_4_,
+        orderdetai5_.capture_at as capture_4_6_4_,
+        orderdetai5_.capture_failure_reason as capture_5_6_4_,
+        orderdetai5_.capture_retry_times as capture_6_6_4_,
+        orderdetai5_.capture_status as capture_7_6_4_,
+        orderdetai5_.channel as channel8_6_4_,
+        orderdetai5_.currency_id as currenc19_6_4_,
+        orderdetai5_.payment_authorized_amount as payment_9_6_4_,
+        orderdetai5_.payment_authorized_currency as payment10_6_4_,
+        orderdetai5_.payment_last_updated_at as payment11_6_4_,
+        orderdetai5_.payment_method as payment12_6_4_,
+        orderdetai5_.payment_platform as payment13_6_4_,
+        orderdetai5_.payment_provider as payment14_6_4_,
+        orderdetai5_.payment_status as payment15_6_4_,
+        orderdetai5_.process_lock as process16_6_4_,
+        orderdetai5_.status as status17_6_4_,
+        orderdetai5_.total_amount as total_a18_6_4_,
+        orderdetai5_.user_id as user_id20_6_4_,
+        user6_.user_id as user_id1_10_5_,
+        user6_.created_at as created_2_10_5_,
+        user6_.updated_at as updated_3_10_5_,
+        user6_.first_name as first_na4_10_5_,
+        user6_.last_name as last_nam5_10_5_,
+        orderdetai7_.user_id as user_id20_6_10_,
+        orderdetai7_.order_detail_id as order_de1_6_10_,
+        orderdetai7_.order_detail_id as order_de1_6_6_,
+        orderdetai7_.created_at as created_2_6_6_,
+        orderdetai7_.updated_at as updated_3_6_6_,
+        orderdetai7_.capture_at as capture_4_6_6_,
+        orderdetai7_.capture_failure_reason as capture_5_6_6_,
+        orderdetai7_.capture_retry_times as capture_6_6_6_,
+        orderdetai7_.capture_status as capture_7_6_6_,
+        orderdetai7_.channel as channel8_6_6_,
+        orderdetai7_.currency_id as currenc19_6_6_,
+        orderdetai7_.payment_authorized_amount as payment_9_6_6_,
+        orderdetai7_.payment_authorized_currency as payment10_6_6_,
+        orderdetai7_.payment_last_updated_at as payment11_6_6_,
+        orderdetai7_.payment_method as payment12_6_6_,
+        orderdetai7_.payment_platform as payment13_6_6_,
+        orderdetai7_.payment_provider as payment14_6_6_,
+        orderdetai7_.payment_status as payment15_6_6_,
+        orderdetai7_.process_lock as process16_6_6_,
+        orderdetai7_.status as status17_6_6_,
+        orderdetai7_.total_amount as total_a18_6_6_,
+        orderdetai7_.user_id as user_id20_6_6_ 
+    from
+        cart cart0_ 
+    inner join
+        currency currency1_ 
+            on cart0_.currency_id=currency1_.currency_id 
+    left outer join
+        product_item productite2_ 
+            on cart0_.cart_id=productite2_.cart_id 
+    left outer join
+        catalogue catalogue3_ 
+            on productite2_.catalogue_id=catalogue3_.catalogue_id 
+    left outer join
+        currency currency4_ 
+            on productite2_.currency_id=currency4_.currency_id 
+    left outer join
+        order_detail orderdetai5_ 
+            on productite2_.order_detail_id=orderdetai5_.order_detail_id 
+    inner join
+        user user6_ 
+            on cart0_.user_id=user6_.user_id 
+    left outer join
+        order_detail orderdetai7_ 
+            on user6_.user_id=orderdetai7_.user_id 
+    where
+        cart0_.user_id=?
+Hibernate: 
+    select
+        cart0_.cart_id as cart_id1_1_7_,
+        cart0_.created_at as created_2_1_7_,
+        cart0_.updated_at as updated_3_1_7_,
+        cart0_.channel as channel4_1_7_,
+        cart0_.currency_id as currency8_1_7_,
+        cart0_.quantity as quantity5_1_7_,
+        cart0_.status as status6_1_7_,
+        cart0_.total_amount as total_am7_1_7_,
+        cart0_.user_id as user_id9_1_7_,
+        currency1_.currency_id as currency1_5_0_,
+        currency1_.created_at as created_2_5_0_,
+        currency1_.updated_at as updated_3_5_0_,
+        currency1_.currency_code as currency4_5_0_,
+        currency1_.currency_name as currency5_5_0_,
+        currency1_.decimal_points as decimal_6_5_0_,
+        productite2_.cart_id as cart_id8_8_9_,
+        productite2_.product_item_id as product_1_8_9_,
+        productite2_.product_item_id as product_1_8_1_,
+        productite2_.created_at as created_2_8_1_,
+        productite2_.updated_at as updated_3_8_1_,
+        productite2_.cart_id as cart_id8_8_1_,
+        productite2_.catalogue_id as catalogu9_8_1_,
+        productite2_.channel as channel4_8_1_,
+        productite2_.currency_id as currenc10_8_1_,
+        productite2_.order_detail_id as order_d11_8_1_,
+        productite2_.quantity as quantity5_8_1_,
+        productite2_.status as status6_8_1_,
+        productite2_.total_amount as total_am7_8_1_,
+        catalogue3_.catalogue_id as catalogu1_3_2_,
+        catalogue3_.created_at as created_2_3_2_,
+        catalogue3_.updated_at as updated_3_3_2_,
+        catalogue3_.catagory as catagory4_3_2_,
+        catalogue3_.currency_id as currenc11_3_2_,
+        catalogue3_.display_name as display_5_3_2_,
+        catalogue3_.long_desc as long_des6_3_2_,
+        catalogue3_.price as price7_3_2_,
+        catalogue3_.quantity as quantity8_3_2_,
+        catalogue3_.short_desc as short_de9_3_2_,
+        catalogue3_.status as status10_3_2_,
+        currency4_.currency_id as currency1_5_3_,
+        currency4_.created_at as created_2_5_3_,
+        currency4_.updated_at as updated_3_5_3_,
+        currency4_.currency_code as currency4_5_3_,
+        currency4_.currency_name as currency5_5_3_,
+        currency4_.decimal_points as decimal_6_5_3_,
+        orderdetai5_.order_detail_id as order_de1_6_4_,
+        orderdetai5_.created_at as created_2_6_4_,
+        orderdetai5_.updated_at as updated_3_6_4_,
+        orderdetai5_.capture_at as capture_4_6_4_,
+        orderdetai5_.capture_failure_reason as capture_5_6_4_,
+        orderdetai5_.capture_retry_times as capture_6_6_4_,
+        orderdetai5_.capture_status as capture_7_6_4_,
+        orderdetai5_.channel as channel8_6_4_,
+        orderdetai5_.currency_id as currenc19_6_4_,
+        orderdetai5_.payment_authorized_amount as payment_9_6_4_,
+        orderdetai5_.payment_authorized_currency as payment10_6_4_,
+        orderdetai5_.payment_last_updated_at as payment11_6_4_,
+        orderdetai5_.payment_method as payment12_6_4_,
+        orderdetai5_.payment_platform as payment13_6_4_,
+        orderdetai5_.payment_provider as payment14_6_4_,
+        orderdetai5_.payment_status as payment15_6_4_,
+        orderdetai5_.process_lock as process16_6_4_,
+        orderdetai5_.status as status17_6_4_,
+        orderdetai5_.total_amount as total_a18_6_4_,
+        orderdetai5_.user_id as user_id20_6_4_,
+        user6_.user_id as user_id1_10_5_,
+        user6_.created_at as created_2_10_5_,
+        user6_.updated_at as updated_3_10_5_,
+        user6_.first_name as first_na4_10_5_,
+        user6_.last_name as last_nam5_10_5_,
+        orderdetai7_.user_id as user_id20_6_10_,
+        orderdetai7_.order_detail_id as order_de1_6_10_,
+        orderdetai7_.order_detail_id as order_de1_6_6_,
+        orderdetai7_.created_at as created_2_6_6_,
+        orderdetai7_.updated_at as updated_3_6_6_,
+        orderdetai7_.capture_at as capture_4_6_6_,
+        orderdetai7_.capture_failure_reason as capture_5_6_6_,
+        orderdetai7_.capture_retry_times as capture_6_6_6_,
+        orderdetai7_.capture_status as capture_7_6_6_,
+        orderdetai7_.channel as channel8_6_6_,
+        orderdetai7_.currency_id as currenc19_6_6_,
+        orderdetai7_.payment_authorized_amount as payment_9_6_6_,
+        orderdetai7_.payment_authorized_currency as payment10_6_6_,
+        orderdetai7_.payment_last_updated_at as payment11_6_6_,
+        orderdetai7_.payment_method as payment12_6_6_,
+        orderdetai7_.payment_platform as payment13_6_6_,
+        orderdetai7_.payment_provider as payment14_6_6_,
+        orderdetai7_.payment_status as payment15_6_6_,
+        orderdetai7_.process_lock as process16_6_6_,
+        orderdetai7_.status as status17_6_6_,
+        orderdetai7_.total_amount as total_a18_6_6_,
+        orderdetai7_.user_id as user_id20_6_6_ 
+    from
+        cart cart0_ 
+    inner join
+        currency currency1_ 
+            on cart0_.currency_id=currency1_.currency_id 
+    left outer join
+        product_item productite2_ 
+            on cart0_.cart_id=productite2_.cart_id 
+    left outer join
+        catalogue catalogue3_ 
+            on productite2_.catalogue_id=catalogue3_.catalogue_id 
+    left outer join
+        currency currency4_ 
+            on productite2_.currency_id=currency4_.currency_id 
+    left outer join
+        order_detail orderdetai5_ 
+            on productite2_.order_detail_id=orderdetai5_.order_detail_id 
+    inner join
+        user user6_ 
+            on cart0_.user_id=user6_.user_id 
+    left outer join
+        order_detail orderdetai7_ 
+            on user6_.user_id=orderdetai7_.user_id 
+    where
+        cart0_.user_id=?
+Hibernate: 
+    select
+        cart0_.cart_id as cart_id1_1_7_,
+        cart0_.created_at as created_2_1_7_,
+        cart0_.updated_at as updated_3_1_7_,
+        cart0_.channel as channel4_1_7_,
+        cart0_.currency_id as currency8_1_7_,
+        cart0_.quantity as quantity5_1_7_,
+        cart0_.status as status6_1_7_,
+        cart0_.total_amount as total_am7_1_7_,
+        cart0_.user_id as user_id9_1_7_,
+        currency1_.currency_id as currency1_5_0_,
+        currency1_.created_at as created_2_5_0_,
+        currency1_.updated_at as updated_3_5_0_,
+        currency1_.currency_code as currency4_5_0_,
+        currency1_.currency_name as currency5_5_0_,
+        currency1_.decimal_points as decimal_6_5_0_,
+        productite2_.cart_id as cart_id8_8_9_,
+        productite2_.product_item_id as product_1_8_9_,
+        productite2_.product_item_id as product_1_8_1_,
+        productite2_.created_at as created_2_8_1_,
+        productite2_.updated_at as updated_3_8_1_,
+        productite2_.cart_id as cart_id8_8_1_,
+        productite2_.catalogue_id as catalogu9_8_1_,
+        productite2_.channel as channel4_8_1_,
+        productite2_.currency_id as currenc10_8_1_,
+        productite2_.order_detail_id as order_d11_8_1_,
+        productite2_.quantity as quantity5_8_1_,
+        productite2_.status as status6_8_1_,
+        productite2_.total_amount as total_am7_8_1_,
+        catalogue3_.catalogue_id as catalogu1_3_2_,
+        catalogue3_.created_at as created_2_3_2_,
+        catalogue3_.updated_at as updated_3_3_2_,
+        catalogue3_.catagory as catagory4_3_2_,
+        catalogue3_.currency_id as currenc11_3_2_,
+        catalogue3_.display_name as display_5_3_2_,
+        catalogue3_.long_desc as long_des6_3_2_,
+        catalogue3_.price as price7_3_2_,
+        catalogue3_.quantity as quantity8_3_2_,
+        catalogue3_.short_desc as short_de9_3_2_,
+        catalogue3_.status as status10_3_2_,
+        currency4_.currency_id as currency1_5_3_,
+        currency4_.created_at as created_2_5_3_,
+        currency4_.updated_at as updated_3_5_3_,
+        currency4_.currency_code as currency4_5_3_,
+        currency4_.currency_name as currency5_5_3_,
+        currency4_.decimal_points as decimal_6_5_3_,
+        orderdetai5_.order_detail_id as order_de1_6_4_,
+        orderdetai5_.created_at as created_2_6_4_,
+        orderdetai5_.updated_at as updated_3_6_4_,
+        orderdetai5_.capture_at as capture_4_6_4_,
+        orderdetai5_.capture_failure_reason as capture_5_6_4_,
+        orderdetai5_.capture_retry_times as capture_6_6_4_,
+        orderdetai5_.capture_status as capture_7_6_4_,
+        orderdetai5_.channel as channel8_6_4_,
+        orderdetai5_.currency_id as currenc19_6_4_,
+        orderdetai5_.payment_authorized_amount as payment_9_6_4_,
+        orderdetai5_.payment_authorized_currency as payment10_6_4_,
+        orderdetai5_.payment_last_updated_at as payment11_6_4_,
+        orderdetai5_.payment_method as payment12_6_4_,
+        orderdetai5_.payment_platform as payment13_6_4_,
+        orderdetai5_.payment_provider as payment14_6_4_,
+        orderdetai5_.payment_status as payment15_6_4_,
+        orderdetai5_.process_lock as process16_6_4_,
+        orderdetai5_.status as status17_6_4_,
+        orderdetai5_.total_amount as total_a18_6_4_,
+        orderdetai5_.user_id as user_id20_6_4_,
+        user6_.user_id as user_id1_10_5_,
+        user6_.created_at as created_2_10_5_,
+        user6_.updated_at as updated_3_10_5_,
+        user6_.first_name as first_na4_10_5_,
+        user6_.last_name as last_nam5_10_5_,
+        orderdetai7_.user_id as user_id20_6_10_,
+        orderdetai7_.order_detail_id as order_de1_6_10_,
+        orderdetai7_.order_detail_id as order_de1_6_6_,
+        orderdetai7_.created_at as created_2_6_6_,
+        orderdetai7_.updated_at as updated_3_6_6_,
+        orderdetai7_.capture_at as capture_4_6_6_,
+        orderdetai7_.capture_failure_reason as capture_5_6_6_,
+        orderdetai7_.capture_retry_times as capture_6_6_6_,
+        orderdetai7_.capture_status as capture_7_6_6_,
+        orderdetai7_.channel as channel8_6_6_,
+        orderdetai7_.currency_id as currenc19_6_6_,
+        orderdetai7_.payment_authorized_amount as payment_9_6_6_,
+        orderdetai7_.payment_authorized_currency as payment10_6_6_,
+        orderdetai7_.payment_last_updated_at as payment11_6_6_,
+        orderdetai7_.payment_method as payment12_6_6_,
+        orderdetai7_.payment_platform as payment13_6_6_,
+        orderdetai7_.payment_provider as payment14_6_6_,
+        orderdetai7_.payment_status as payment15_6_6_,
+        orderdetai7_.process_lock as process16_6_6_,
+        orderdetai7_.status as status17_6_6_,
+        orderdetai7_.total_amount as total_a18_6_6_,
+        orderdetai7_.user_id as user_id20_6_6_ 
+    from
+        cart cart0_ 
+    inner join
+        currency currency1_ 
+            on cart0_.currency_id=currency1_.currency_id 
+    left outer join
+        product_item productite2_ 
+            on cart0_.cart_id=productite2_.cart_id 
+    left outer join
+        catalogue catalogue3_ 
+            on productite2_.catalogue_id=catalogue3_.catalogue_id 
+    left outer join
+        currency currency4_ 
+            on productite2_.currency_id=currency4_.currency_id 
+    left outer join
+        order_detail orderdetai5_ 
+            on productite2_.order_detail_id=orderdetai5_.order_detail_id 
+    inner join
+        user user6_ 
+            on cart0_.user_id=user6_.user_id 
+    left outer join
+        order_detail orderdetai7_ 
+            on user6_.user_id=orderdetai7_.user_id 
+    where
+        cart0_.user_id=?
+Hibernate: 
+    select
+        productite0_.order_detail_id as order_d11_8_0_,
+        productite0_.product_item_id as product_1_8_0_,
+        productite0_.product_item_id as product_1_8_1_,
+        productite0_.created_at as created_2_8_1_,
+        productite0_.updated_at as updated_3_8_1_,
+        productite0_.cart_id as cart_id8_8_1_,
+        productite0_.catalogue_id as catalogu9_8_1_,
+        productite0_.channel as channel4_8_1_,
+        productite0_.currency_id as currenc10_8_1_,
+        productite0_.order_detail_id as order_d11_8_1_,
+        productite0_.quantity as quantity5_8_1_,
+        productite0_.status as status6_8_1_,
+        productite0_.total_amount as total_am7_8_1_,
+        cart1_.cart_id as cart_id1_1_2_,
+        cart1_.created_at as created_2_1_2_,
+        cart1_.updated_at as updated_3_1_2_,
+        cart1_.channel as channel4_1_2_,
+        cart1_.currency_id as currency8_1_2_,
+        cart1_.quantity as quantity5_1_2_,
+        cart1_.status as status6_1_2_,
+        cart1_.total_amount as total_am7_1_2_,
+        cart1_.user_id as user_id9_1_2_,
+        currency2_.currency_id as currency1_5_3_,
+        currency2_.created_at as created_2_5_3_,
+        currency2_.updated_at as updated_3_5_3_,
+        currency2_.currency_code as currency4_5_3_,
+        currency2_.currency_name as currency5_5_3_,
+        currency2_.decimal_points as decimal_6_5_3_,
+        user3_.user_id as user_id1_10_4_,
+        user3_.created_at as created_2_10_4_,
+        user3_.updated_at as updated_3_10_4_,
+        user3_.first_name as first_na4_10_4_,
+        user3_.last_name as last_nam5_10_4_,
+        catalogue4_.catalogue_id as catalogu1_3_5_,
+        catalogue4_.created_at as created_2_3_5_,
+        catalogue4_.updated_at as updated_3_3_5_,
+        catalogue4_.catagory as catagory4_3_5_,
+        catalogue4_.currency_id as currenc11_3_5_,
+        catalogue4_.display_name as display_5_3_5_,
+        catalogue4_.long_desc as long_des6_3_5_,
+        catalogue4_.price as price7_3_5_,
+        catalogue4_.quantity as quantity8_3_5_,
+        catalogue4_.short_desc as short_de9_3_5_,
+        catalogue4_.status as status10_3_5_,
+        currency5_.currency_id as currency1_5_6_,
+        currency5_.created_at as created_2_5_6_,
+        currency5_.updated_at as updated_3_5_6_,
+        currency5_.currency_code as currency4_5_6_,
+        currency5_.currency_name as currency5_5_6_,
+        currency5_.decimal_points as decimal_6_5_6_,
+        currency6_.currency_id as currency1_5_7_,
+        currency6_.created_at as created_2_5_7_,
+        currency6_.updated_at as updated_3_5_7_,
+        currency6_.currency_code as currency4_5_7_,
+        currency6_.currency_name as currency5_5_7_,
+        currency6_.decimal_points as decimal_6_5_7_ 
+    from
+        product_item productite0_ 
+    inner join
+        cart cart1_ 
+            on productite0_.cart_id=cart1_.cart_id 
+    inner join
+        currency currency2_ 
+            on cart1_.currency_id=currency2_.currency_id 
+    inner join
+        user user3_ 
+            on cart1_.user_id=user3_.user_id 
+    inner join
+        catalogue catalogue4_ 
+            on productite0_.catalogue_id=catalogue4_.catalogue_id 
+    inner join
+        currency currency5_ 
+            on catalogue4_.currency_id=currency5_.currency_id 
+    inner join
+        currency currency6_ 
+            on productite0_.currency_id=currency6_.currency_id 
+    where
+        productite0_.order_detail_id=?
+Hibernate: 
+    select
+        productite0_.order_detail_id as order_d11_8_0_,
+        productite0_.product_item_id as product_1_8_0_,
+        productite0_.product_item_id as product_1_8_1_,
+        productite0_.created_at as created_2_8_1_,
+        productite0_.updated_at as updated_3_8_1_,
+        productite0_.cart_id as cart_id8_8_1_,
+        productite0_.catalogue_id as catalogu9_8_1_,
+        productite0_.channel as channel4_8_1_,
+        productite0_.currency_id as currenc10_8_1_,
+        productite0_.order_detail_id as order_d11_8_1_,
+        productite0_.quantity as quantity5_8_1_,
+        productite0_.status as status6_8_1_,
+        productite0_.total_amount as total_am7_8_1_,
+        cart1_.cart_id as cart_id1_1_2_,
+        cart1_.created_at as created_2_1_2_,
+        cart1_.updated_at as updated_3_1_2_,
+        cart1_.channel as channel4_1_2_,
+        cart1_.currency_id as currency8_1_2_,
+        cart1_.quantity as quantity5_1_2_,
+        cart1_.status as status6_1_2_,
+        cart1_.total_amount as total_am7_1_2_,
+        cart1_.user_id as user_id9_1_2_,
+        currency2_.currency_id as currency1_5_3_,
+        currency2_.created_at as created_2_5_3_,
+        currency2_.updated_at as updated_3_5_3_,
+        currency2_.currency_code as currency4_5_3_,
+        currency2_.currency_name as currency5_5_3_,
+        currency2_.decimal_points as decimal_6_5_3_,
+        user3_.user_id as user_id1_10_4_,
+        user3_.created_at as created_2_10_4_,
+        user3_.updated_at as updated_3_10_4_,
+        user3_.first_name as first_na4_10_4_,
+        user3_.last_name as last_nam5_10_4_,
+        catalogue4_.catalogue_id as catalogu1_3_5_,
+        catalogue4_.created_at as created_2_3_5_,
+        catalogue4_.updated_at as updated_3_3_5_,
+        catalogue4_.catagory as catagory4_3_5_,
+        catalogue4_.currency_id as currenc11_3_5_,
+        catalogue4_.display_name as display_5_3_5_,
+        catalogue4_.long_desc as long_des6_3_5_,
+        catalogue4_.price as price7_3_5_,
+        catalogue4_.quantity as quantity8_3_5_,
+        catalogue4_.short_desc as short_de9_3_5_,
+        catalogue4_.status as status10_3_5_,
+        currency5_.currency_id as currency1_5_6_,
+        currency5_.created_at as created_2_5_6_,
+        currency5_.updated_at as updated_3_5_6_,
+        currency5_.currency_code as currency4_5_6_,
+        currency5_.currency_name as currency5_5_6_,
+        currency5_.decimal_points as decimal_6_5_6_,
+        currency6_.currency_id as currency1_5_7_,
+        currency6_.created_at as created_2_5_7_,
+        currency6_.updated_at as updated_3_5_7_,
+        currency6_.currency_code as currency4_5_7_,
+        currency6_.currency_name as currency5_5_7_,
+        currency6_.decimal_points as decimal_6_5_7_ 
+    from
+        product_item productite0_ 
+    inner join
+        cart cart1_ 
+            on productite0_.cart_id=cart1_.cart_id 
+    inner join
+        currency currency2_ 
+            on cart1_.currency_id=currency2_.currency_id 
+    inner join
+        user user3_ 
+            on cart1_.user_id=user3_.user_id 
+    inner join
+        catalogue catalogue4_ 
+            on productite0_.catalogue_id=catalogue4_.catalogue_id 
+    inner join
+        currency currency5_ 
+            on catalogue4_.currency_id=currency5_.currency_id 
+    inner join
+        currency currency6_ 
+            on productite0_.currency_id=currency6_.currency_id 
+    where
+        productite0_.order_detail_id=?
+Hibernate: 
+    select
+        productite0_.order_detail_id as order_d11_8_0_,
+        productite0_.product_item_id as product_1_8_0_,
+        productite0_.product_item_id as product_1_8_1_,
+        productite0_.created_at as created_2_8_1_,
+        productite0_.updated_at as updated_3_8_1_,
+        productite0_.cart_id as cart_id8_8_1_,
+        productite0_.catalogue_id as catalogu9_8_1_,
+        productite0_.channel as channel4_8_1_,
+        productite0_.currency_id as currenc10_8_1_,
+        productite0_.order_detail_id as order_d11_8_1_,
+        productite0_.quantity as quantity5_8_1_,
+        productite0_.status as status6_8_1_,
+        productite0_.total_amount as total_am7_8_1_,
+        cart1_.cart_id as cart_id1_1_2_,
+        cart1_.created_at as created_2_1_2_,
+        cart1_.updated_at as updated_3_1_2_,
+        cart1_.channel as channel4_1_2_,
+        cart1_.currency_id as currency8_1_2_,
+        cart1_.quantity as quantity5_1_2_,
+        cart1_.status as status6_1_2_,
+        cart1_.total_amount as total_am7_1_2_,
+        cart1_.user_id as user_id9_1_2_,
+        currency2_.currency_id as currency1_5_3_,
+        currency2_.created_at as created_2_5_3_,
+        currency2_.updated_at as updated_3_5_3_,
+        currency2_.currency_code as currency4_5_3_,
+        currency2_.currency_name as currency5_5_3_,
+        currency2_.decimal_points as decimal_6_5_3_,
+        user3_.user_id as user_id1_10_4_,
+        user3_.created_at as created_2_10_4_,
+        user3_.updated_at as updated_3_10_4_,
+        user3_.first_name as first_na4_10_4_,
+        user3_.last_name as last_nam5_10_4_,
+        catalogue4_.catalogue_id as catalogu1_3_5_,
+        catalogue4_.created_at as created_2_3_5_,
+        catalogue4_.updated_at as updated_3_3_5_,
+        catalogue4_.catagory as catagory4_3_5_,
+        catalogue4_.currency_id as currenc11_3_5_,
+        catalogue4_.display_name as display_5_3_5_,
+        catalogue4_.long_desc as long_des6_3_5_,
+        catalogue4_.price as price7_3_5_,
+        catalogue4_.quantity as quantity8_3_5_,
+        catalogue4_.short_desc as short_de9_3_5_,
+        catalogue4_.status as status10_3_5_,
+        currency5_.currency_id as currency1_5_6_,
+        currency5_.created_at as created_2_5_6_,
+        currency5_.updated_at as updated_3_5_6_,
+        currency5_.currency_code as currency4_5_6_,
+        currency5_.currency_name as currency5_5_6_,
+        currency5_.decimal_points as decimal_6_5_6_,
+        currency6_.currency_id as currency1_5_7_,
+        currency6_.created_at as created_2_5_7_,
+        currency6_.updated_at as updated_3_5_7_,
+        currency6_.currency_code as currency4_5_7_,
+        currency6_.currency_name as currency5_5_7_,
+        currency6_.decimal_points as decimal_6_5_7_ 
+    from
+        product_item productite0_ 
+    inner join
+        cart cart1_ 
+            on productite0_.cart_id=cart1_.cart_id 
+    inner join
+        currency currency2_ 
+            on cart1_.currency_id=currency2_.currency_id 
+    inner join
+        user user3_ 
+            on cart1_.user_id=user3_.user_id 
+    inner join
+        catalogue catalogue4_ 
+            on productite0_.catalogue_id=catalogue4_.catalogue_id 
+    inner join
+        currency currency5_ 
+            on catalogue4_.currency_id=currency5_.currency_id 
+    inner join
+        currency currency6_ 
+            on productite0_.currency_id=currency6_.currency_id 
+    where
+        productite0_.order_detail_id=?
+Hibernate: 
+    select
+        productite0_.order_detail_id as order_d11_8_0_,
+        productite0_.product_item_id as product_1_8_0_,
+        productite0_.product_item_id as product_1_8_1_,
+        productite0_.created_at as created_2_8_1_,
+        productite0_.updated_at as updated_3_8_1_,
+        productite0_.cart_id as cart_id8_8_1_,
+        productite0_.catalogue_id as catalogu9_8_1_,
+        productite0_.channel as channel4_8_1_,
+        productite0_.currency_id as currenc10_8_1_,
+        productite0_.order_detail_id as order_d11_8_1_,
+        productite0_.quantity as quantity5_8_1_,
+        productite0_.status as status6_8_1_,
+        productite0_.total_amount as total_am7_8_1_,
+        cart1_.cart_id as cart_id1_1_2_,
+        cart1_.created_at as created_2_1_2_,
+        cart1_.updated_at as updated_3_1_2_,
+        cart1_.channel as channel4_1_2_,
+        cart1_.currency_id as currency8_1_2_,
+        cart1_.quantity as quantity5_1_2_,
+        cart1_.status as status6_1_2_,
+        cart1_.total_amount as total_am7_1_2_,
+        cart1_.user_id as user_id9_1_2_,
+        currency2_.currency_id as currency1_5_3_,
+        currency2_.created_at as created_2_5_3_,
+        currency2_.updated_at as updated_3_5_3_,
+        currency2_.currency_code as currency4_5_3_,
+        currency2_.currency_name as currency5_5_3_,
+        currency2_.decimal_points as decimal_6_5_3_,
+        user3_.user_id as user_id1_10_4_,
+        user3_.created_at as created_2_10_4_,
+        user3_.updated_at as updated_3_10_4_,
+        user3_.first_name as first_na4_10_4_,
+        user3_.last_name as last_nam5_10_4_,
+        catalogue4_.catalogue_id as catalogu1_3_5_,
+        catalogue4_.created_at as created_2_3_5_,
+        catalogue4_.updated_at as updated_3_3_5_,
+        catalogue4_.catagory as catagory4_3_5_,
+        catalogue4_.currency_id as currenc11_3_5_,
+        catalogue4_.display_name as display_5_3_5_,
+        catalogue4_.long_desc as long_des6_3_5_,
+        catalogue4_.price as price7_3_5_,
+        catalogue4_.quantity as quantity8_3_5_,
+        catalogue4_.short_desc as short_de9_3_5_,
+        catalogue4_.status as status10_3_5_,
+        currency5_.currency_id as currency1_5_6_,
+        currency5_.created_at as created_2_5_6_,
+        currency5_.updated_at as updated_3_5_6_,
+        currency5_.currency_code as currency4_5_6_,
+        currency5_.currency_name as currency5_5_6_,
+        currency5_.decimal_points as decimal_6_5_6_,
+        currency6_.currency_id as currency1_5_7_,
+        currency6_.created_at as created_2_5_7_,
+        currency6_.updated_at as updated_3_5_7_,
+        currency6_.currency_code as currency4_5_7_,
+        currency6_.currency_name as currency5_5_7_,
+        currency6_.decimal_points as decimal_6_5_7_ 
+    from
+        product_item productite0_ 
+    inner join
+        cart cart1_ 
+            on productite0_.cart_id=cart1_.cart_id 
+    inner join
+        currency currency2_ 
+            on cart1_.currency_id=currency2_.currency_id 
+    inner join
+        user user3_ 
+            on cart1_.user_id=user3_.user_id 
+    inner join
+        catalogue catalogue4_ 
+            on productite0_.catalogue_id=catalogue4_.catalogue_id 
+    inner join
+        currency currency5_ 
+            on catalogue4_.currency_id=currency5_.currency_id 
+    inner join
+        currency currency6_ 
+            on productite0_.currency_id=currency6_.currency_id 
+    where
+        productite0_.order_detail_id=?
+Hibernate: 
+    select
+        cartarch_.cart_id,
+        cartarch_.created_at as created_2_2_,
+        cartarch_.updated_at as updated_3_2_,
+        cartarch_.channel as channel4_2_,
+        cartarch_.currency_id as currency8_2_,
+        cartarch_.quantity as quantity5_2_,
+        cartarch_.status as status6_2_,
+        cartarch_.total_amount as total_am7_2_,
+        cartarch_.user_id as user_id9_2_ 
+    from
+        cart_arch cartarch_ 
+    where
+        cartarch_.cart_id=?
+2020-05-01 15:38:11.458  WARN 32072 --- [nio-8060-exec-1] o.h.a.i.UnresolvedEntityInsertActions    : HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([com.product.entity.CartArch#1])
+	Dependent entities: ([[com.product.entity.ProductItemArch#1]])
+	Non-nullable association(s): ([com.product.entity.ProductItemArch.cart])
+2020-05-01 15:38:11.458  WARN 32072 --- [nio-8060-exec-1] o.h.a.i.UnresolvedEntityInsertActions    : HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([com.product.entity.CartArch#1])
+	Dependent entities: ([[com.product.entity.ProductItemArch#7]])
+	Non-nullable association(s): ([com.product.entity.ProductItemArch.cart])
+2020-05-01 15:38:11.458  WARN 32072 --- [nio-8060-exec-1] o.h.a.i.UnresolvedEntityInsertActions    : HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([com.product.entity.CartArch#1])
+	Dependent entities: ([[com.product.entity.ProductItemArch#8]])
+	Non-nullable association(s): ([com.product.entity.ProductItemArch.cart])
+2020-05-01 15:38:11.458  WARN 32072 --- [nio-8060-exec-1] o.h.a.i.UnresolvedEntityInsertActions    : HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([com.product.entity.CartArch#1])
+	Dependent entities: ([[com.product.entity.ProductItemArch#2]])
+	Non-nullable association(s): ([com.product.entity.ProductItemArch.cart])
+java.lang.IllegalStateException: org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.product.entity.ProductItemArch.cart -> com.product.entity.CartArch
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:146)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:157)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:164)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:797)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:768)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:350)
+	at com.sun.proxy.$Proxy115.persist(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:305)
+	at com.sun.proxy.$Proxy115.persist(Unknown Source)
+	at com.product.service.schedule.job.HousekeepJob.archiveData(HousekeepJob.java:62)
+	at com.product.service.schedule.job.HousekeepJob$$FastClassBySpringCGLIB$$4433cc9b.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:746)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.product.service.schedule.job.HousekeepJob$$EnhancerBySpringCGLIB$$e4084400.archiveData(<generated>)
+	at com.product.service.schedule.job.ScheduleJob.executeArchiveDatabaseRecordJob(ScheduleJob.java:139)
+	at com.product.service.schedule.job.ScheduleJob$$FastClassBySpringCGLIB$$a399e783.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:684)
+	at com.product.service.schedule.job.ScheduleJob$$EnhancerBySpringCGLIB$$62cea5b8.executeArchiveDatabaseRecordJob(<generated>)
+	at com.product.controller.CommonController.test(CommonController.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.product.entity.ProductItemArch.cart -> com.product.entity.CartArch
+	at org.hibernate.action.internal.UnresolvedEntityInsertActions.checkNoUnresolvedActionsAfterOperation(UnresolvedEntityInsertActions.java:122)
+	at org.hibernate.engine.spi.ActionQueue.checkNoUnresolvedActionsAfterOperation(ActionQueue.java:432)
+	at org.hibernate.internal.SessionImpl.checkNoUnresolvedActionsAfterOperation(SessionImpl.java:631)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:794)
+	... 103 more
+2020-05-01 15:38:11.469 ERROR 32072 --- [nio-8060-exec-1] c.p.service.schedule.job.ScheduleJob     : java.lang.IllegalStateException: org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.product.entity.ProductItemArch.cart -> com.product.entity.CartArch
+2020-05-01 15:38:11.476  INFO 32072 --- [nio-8060-exec-1] c.p.service.schedule.job.ScheduleJob     : First userId been processed: null
+2020-05-01 15:38:11.476  INFO 32072 --- [nio-8060-exec-1] c.p.service.schedule.job.ScheduleJob     : Last userId been processed: null
+2020-05-01 15:38:11.476  INFO 32072 --- [nio-8060-exec-1] c.p.service.schedule.job.ScheduleJob     : Housekeep detail of active tables: user = null, cart = null, orderDetail = null, product_item = null
+2020-05-01 15:38:11.476  INFO 32072 --- [nio-8060-exec-1] c.p.service.schedule.job.ScheduleJob     : Housekeep detail of archive tables: user_arch = null, cart_arch = null, order_detail_arch = null, product_item_arch = null
+Hibernate: 
+    insert 
+    into
+        housekeep_summary
+        (created_at, updated_at, copy_to, no_of_records_updated, remove_from, scheduled_job_finished_at, scheduled_job_name, scheduled_job_started_at, scheduler_instance_name, status, status_message, type) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        housekeep_summary
+        (created_at, updated_at, copy_to, no_of_records_updated, remove_from, scheduled_job_finished_at, scheduled_job_name, scheduled_job_started_at, scheduler_instance_name, status, status_message, type) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        housekeep_summary
+        (created_at, updated_at, copy_to, no_of_records_updated, remove_from, scheduled_job_finished_at, scheduled_job_name, scheduled_job_started_at, scheduler_instance_name, status, status_message, type) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        housekeep_summary
+        (created_at, updated_at, copy_to, no_of_records_updated, remove_from, scheduled_job_finished_at, scheduled_job_name, scheduled_job_started_at, scheduler_instance_name, status, status_message, type) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)

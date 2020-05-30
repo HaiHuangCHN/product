@@ -1,0 +1,1494 @@
+2020-05-01 15:23:44.850  INFO 18856 --- [nio-8060-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-05-01 15:23:44.850  INFO 18856 --- [nio-8060-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2020-05-01 15:23:44.873  INFO 18856 --- [nio-8060-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 22 ms
+Hibernate: 
+    select
+        user0_.user_id as user_id1_10_,
+        user0_.created_at as created_2_10_,
+        user0_.updated_at as updated_3_10_,
+        user0_.first_name as first_na4_10_,
+        user0_.last_name as last_nam5_10_ 
+    from
+        user user0_ 
+    where
+        user0_.updated_at<? limit ?
+Hibernate: 
+    select
+        cart0_.cart_id as cart_id1_1_7_,
+        cart0_.created_at as created_2_1_7_,
+        cart0_.updated_at as updated_3_1_7_,
+        cart0_.channel as channel4_1_7_,
+        cart0_.currency_id as currency8_1_7_,
+        cart0_.quantity as quantity5_1_7_,
+        cart0_.status as status6_1_7_,
+        cart0_.total_amount as total_am7_1_7_,
+        cart0_.user_id as user_id9_1_7_,
+        currency1_.currency_id as currency1_5_0_,
+        currency1_.created_at as created_2_5_0_,
+        currency1_.updated_at as updated_3_5_0_,
+        currency1_.currency_code as currency4_5_0_,
+        currency1_.currency_name as currency5_5_0_,
+        currency1_.decimal_points as decimal_6_5_0_,
+        productite2_.cart_id as cart_id8_8_9_,
+        productite2_.product_item_id as product_1_8_9_,
+        productite2_.product_item_id as product_1_8_1_,
+        productite2_.created_at as created_2_8_1_,
+        productite2_.updated_at as updated_3_8_1_,
+        productite2_.cart_id as cart_id8_8_1_,
+        productite2_.catalogue_id as catalogu9_8_1_,
+        productite2_.channel as channel4_8_1_,
+        productite2_.currency_id as currenc10_8_1_,
+        productite2_.order_detail_id as order_d11_8_1_,
+        productite2_.quantity as quantity5_8_1_,
+        productite2_.status as status6_8_1_,
+        productite2_.total_amount as total_am7_8_1_,
+        catalogue3_.catalogue_id as catalogu1_3_2_,
+        catalogue3_.created_at as created_2_3_2_,
+        catalogue3_.updated_at as updated_3_3_2_,
+        catalogue3_.catagory as catagory4_3_2_,
+        catalogue3_.currency_id as currenc11_3_2_,
+        catalogue3_.display_name as display_5_3_2_,
+        catalogue3_.long_desc as long_des6_3_2_,
+        catalogue3_.price as price7_3_2_,
+        catalogue3_.quantity as quantity8_3_2_,
+        catalogue3_.short_desc as short_de9_3_2_,
+        catalogue3_.status as status10_3_2_,
+        currency4_.currency_id as currency1_5_3_,
+        currency4_.created_at as created_2_5_3_,
+        currency4_.updated_at as updated_3_5_3_,
+        currency4_.currency_code as currency4_5_3_,
+        currency4_.currency_name as currency5_5_3_,
+        currency4_.decimal_points as decimal_6_5_3_,
+        orderdetai5_.order_detail_id as order_de1_6_4_,
+        orderdetai5_.created_at as created_2_6_4_,
+        orderdetai5_.updated_at as updated_3_6_4_,
+        orderdetai5_.capture_at as capture_4_6_4_,
+        orderdetai5_.capture_failure_reason as capture_5_6_4_,
+        orderdetai5_.capture_retry_times as capture_6_6_4_,
+        orderdetai5_.capture_status as capture_7_6_4_,
+        orderdetai5_.channel as channel8_6_4_,
+        orderdetai5_.currency_id as currenc19_6_4_,
+        orderdetai5_.payment_authorized_amount as payment_9_6_4_,
+        orderdetai5_.payment_authorized_currency as payment10_6_4_,
+        orderdetai5_.payment_last_updated_at as payment11_6_4_,
+        orderdetai5_.payment_method as payment12_6_4_,
+        orderdetai5_.payment_platform as payment13_6_4_,
+        orderdetai5_.payment_provider as payment14_6_4_,
+        orderdetai5_.payment_status as payment15_6_4_,
+        orderdetai5_.process_lock as process16_6_4_,
+        orderdetai5_.status as status17_6_4_,
+        orderdetai5_.total_amount as total_a18_6_4_,
+        orderdetai5_.user_id as user_id20_6_4_,
+        user6_.user_id as user_id1_10_5_,
+        user6_.created_at as created_2_10_5_,
+        user6_.updated_at as updated_3_10_5_,
+        user6_.first_name as first_na4_10_5_,
+        user6_.last_name as last_nam5_10_5_,
+        orderdetai7_.user_id as user_id20_6_10_,
+        orderdetai7_.order_detail_id as order_de1_6_10_,
+        orderdetai7_.order_detail_id as order_de1_6_6_,
+        orderdetai7_.created_at as created_2_6_6_,
+        orderdetai7_.updated_at as updated_3_6_6_,
+        orderdetai7_.capture_at as capture_4_6_6_,
+        orderdetai7_.capture_failure_reason as capture_5_6_6_,
+        orderdetai7_.capture_retry_times as capture_6_6_6_,
+        orderdetai7_.capture_status as capture_7_6_6_,
+        orderdetai7_.channel as channel8_6_6_,
+        orderdetai7_.currency_id as currenc19_6_6_,
+        orderdetai7_.payment_authorized_amount as payment_9_6_6_,
+        orderdetai7_.payment_authorized_currency as payment10_6_6_,
+        orderdetai7_.payment_last_updated_at as payment11_6_6_,
+        orderdetai7_.payment_method as payment12_6_6_,
+        orderdetai7_.payment_platform as payment13_6_6_,
+        orderdetai7_.payment_provider as payment14_6_6_,
+        orderdetai7_.payment_status as payment15_6_6_,
+        orderdetai7_.process_lock as process16_6_6_,
+        orderdetai7_.status as status17_6_6_,
+        orderdetai7_.total_amount as total_a18_6_6_,
+        orderdetai7_.user_id as user_id20_6_6_ 
+    from
+        cart cart0_ 
+    inner join
+        currency currency1_ 
+            on cart0_.currency_id=currency1_.currency_id 
+    left outer join
+        product_item productite2_ 
+            on cart0_.cart_id=productite2_.cart_id 
+    left outer join
+        catalogue catalogue3_ 
+            on productite2_.catalogue_id=catalogue3_.catalogue_id 
+    left outer join
+        currency currency4_ 
+            on productite2_.currency_id=currency4_.currency_id 
+    left outer join
+        order_detail orderdetai5_ 
+            on productite2_.order_detail_id=orderdetai5_.order_detail_id 
+    inner join
+        user user6_ 
+            on cart0_.user_id=user6_.user_id 
+    left outer join
+        order_detail orderdetai7_ 
+            on user6_.user_id=orderdetai7_.user_id 
+    where
+        cart0_.user_id=?
+Hibernate: 
+    select
+        cart0_.cart_id as cart_id1_1_7_,
+        cart0_.created_at as created_2_1_7_,
+        cart0_.updated_at as updated_3_1_7_,
+        cart0_.channel as channel4_1_7_,
+        cart0_.currency_id as currency8_1_7_,
+        cart0_.quantity as quantity5_1_7_,
+        cart0_.status as status6_1_7_,
+        cart0_.total_amount as total_am7_1_7_,
+        cart0_.user_id as user_id9_1_7_,
+        currency1_.currency_id as currency1_5_0_,
+        currency1_.created_at as created_2_5_0_,
+        currency1_.updated_at as updated_3_5_0_,
+        currency1_.currency_code as currency4_5_0_,
+        currency1_.currency_name as currency5_5_0_,
+        currency1_.decimal_points as decimal_6_5_0_,
+        productite2_.cart_id as cart_id8_8_9_,
+        productite2_.product_item_id as product_1_8_9_,
+        productite2_.product_item_id as product_1_8_1_,
+        productite2_.created_at as created_2_8_1_,
+        productite2_.updated_at as updated_3_8_1_,
+        productite2_.cart_id as cart_id8_8_1_,
+        productite2_.catalogue_id as catalogu9_8_1_,
+        productite2_.channel as channel4_8_1_,
+        productite2_.currency_id as currenc10_8_1_,
+        productite2_.order_detail_id as order_d11_8_1_,
+        productite2_.quantity as quantity5_8_1_,
+        productite2_.status as status6_8_1_,
+        productite2_.total_amount as total_am7_8_1_,
+        catalogue3_.catalogue_id as catalogu1_3_2_,
+        catalogue3_.created_at as created_2_3_2_,
+        catalogue3_.updated_at as updated_3_3_2_,
+        catalogue3_.catagory as catagory4_3_2_,
+        catalogue3_.currency_id as currenc11_3_2_,
+        catalogue3_.display_name as display_5_3_2_,
+        catalogue3_.long_desc as long_des6_3_2_,
+        catalogue3_.price as price7_3_2_,
+        catalogue3_.quantity as quantity8_3_2_,
+        catalogue3_.short_desc as short_de9_3_2_,
+        catalogue3_.status as status10_3_2_,
+        currency4_.currency_id as currency1_5_3_,
+        currency4_.created_at as created_2_5_3_,
+        currency4_.updated_at as updated_3_5_3_,
+        currency4_.currency_code as currency4_5_3_,
+        currency4_.currency_name as currency5_5_3_,
+        currency4_.decimal_points as decimal_6_5_3_,
+        orderdetai5_.order_detail_id as order_de1_6_4_,
+        orderdetai5_.created_at as created_2_6_4_,
+        orderdetai5_.updated_at as updated_3_6_4_,
+        orderdetai5_.capture_at as capture_4_6_4_,
+        orderdetai5_.capture_failure_reason as capture_5_6_4_,
+        orderdetai5_.capture_retry_times as capture_6_6_4_,
+        orderdetai5_.capture_status as capture_7_6_4_,
+        orderdetai5_.channel as channel8_6_4_,
+        orderdetai5_.currency_id as currenc19_6_4_,
+        orderdetai5_.payment_authorized_amount as payment_9_6_4_,
+        orderdetai5_.payment_authorized_currency as payment10_6_4_,
+        orderdetai5_.payment_last_updated_at as payment11_6_4_,
+        orderdetai5_.payment_method as payment12_6_4_,
+        orderdetai5_.payment_platform as payment13_6_4_,
+        orderdetai5_.payment_provider as payment14_6_4_,
+        orderdetai5_.payment_status as payment15_6_4_,
+        orderdetai5_.process_lock as process16_6_4_,
+        orderdetai5_.status as status17_6_4_,
+        orderdetai5_.total_amount as total_a18_6_4_,
+        orderdetai5_.user_id as user_id20_6_4_,
+        user6_.user_id as user_id1_10_5_,
+        user6_.created_at as created_2_10_5_,
+        user6_.updated_at as updated_3_10_5_,
+        user6_.first_name as first_na4_10_5_,
+        user6_.last_name as last_nam5_10_5_,
+        orderdetai7_.user_id as user_id20_6_10_,
+        orderdetai7_.order_detail_id as order_de1_6_10_,
+        orderdetai7_.order_detail_id as order_de1_6_6_,
+        orderdetai7_.created_at as created_2_6_6_,
+        orderdetai7_.updated_at as updated_3_6_6_,
+        orderdetai7_.capture_at as capture_4_6_6_,
+        orderdetai7_.capture_failure_reason as capture_5_6_6_,
+        orderdetai7_.capture_retry_times as capture_6_6_6_,
+        orderdetai7_.capture_status as capture_7_6_6_,
+        orderdetai7_.channel as channel8_6_6_,
+        orderdetai7_.currency_id as currenc19_6_6_,
+        orderdetai7_.payment_authorized_amount as payment_9_6_6_,
+        orderdetai7_.payment_authorized_currency as payment10_6_6_,
+        orderdetai7_.payment_last_updated_at as payment11_6_6_,
+        orderdetai7_.payment_method as payment12_6_6_,
+        orderdetai7_.payment_platform as payment13_6_6_,
+        orderdetai7_.payment_provider as payment14_6_6_,
+        orderdetai7_.payment_status as payment15_6_6_,
+        orderdetai7_.process_lock as process16_6_6_,
+        orderdetai7_.status as status17_6_6_,
+        orderdetai7_.total_amount as total_a18_6_6_,
+        orderdetai7_.user_id as user_id20_6_6_ 
+    from
+        cart cart0_ 
+    inner join
+        currency currency1_ 
+            on cart0_.currency_id=currency1_.currency_id 
+    left outer join
+        product_item productite2_ 
+            on cart0_.cart_id=productite2_.cart_id 
+    left outer join
+        catalogue catalogue3_ 
+            on productite2_.catalogue_id=catalogue3_.catalogue_id 
+    left outer join
+        currency currency4_ 
+            on productite2_.currency_id=currency4_.currency_id 
+    left outer join
+        order_detail orderdetai5_ 
+            on productite2_.order_detail_id=orderdetai5_.order_detail_id 
+    inner join
+        user user6_ 
+            on cart0_.user_id=user6_.user_id 
+    left outer join
+        order_detail orderdetai7_ 
+            on user6_.user_id=orderdetai7_.user_id 
+    where
+        cart0_.user_id=?
+Hibernate: 
+    select
+        cart0_.cart_id as cart_id1_1_7_,
+        cart0_.created_at as created_2_1_7_,
+        cart0_.updated_at as updated_3_1_7_,
+        cart0_.channel as channel4_1_7_,
+        cart0_.currency_id as currency8_1_7_,
+        cart0_.quantity as quantity5_1_7_,
+        cart0_.status as status6_1_7_,
+        cart0_.total_amount as total_am7_1_7_,
+        cart0_.user_id as user_id9_1_7_,
+        currency1_.currency_id as currency1_5_0_,
+        currency1_.created_at as created_2_5_0_,
+        currency1_.updated_at as updated_3_5_0_,
+        currency1_.currency_code as currency4_5_0_,
+        currency1_.currency_name as currency5_5_0_,
+        currency1_.decimal_points as decimal_6_5_0_,
+        productite2_.cart_id as cart_id8_8_9_,
+        productite2_.product_item_id as product_1_8_9_,
+        productite2_.product_item_id as product_1_8_1_,
+        productite2_.created_at as created_2_8_1_,
+        productite2_.updated_at as updated_3_8_1_,
+        productite2_.cart_id as cart_id8_8_1_,
+        productite2_.catalogue_id as catalogu9_8_1_,
+        productite2_.channel as channel4_8_1_,
+        productite2_.currency_id as currenc10_8_1_,
+        productite2_.order_detail_id as order_d11_8_1_,
+        productite2_.quantity as quantity5_8_1_,
+        productite2_.status as status6_8_1_,
+        productite2_.total_amount as total_am7_8_1_,
+        catalogue3_.catalogue_id as catalogu1_3_2_,
+        catalogue3_.created_at as created_2_3_2_,
+        catalogue3_.updated_at as updated_3_3_2_,
+        catalogue3_.catagory as catagory4_3_2_,
+        catalogue3_.currency_id as currenc11_3_2_,
+        catalogue3_.display_name as display_5_3_2_,
+        catalogue3_.long_desc as long_des6_3_2_,
+        catalogue3_.price as price7_3_2_,
+        catalogue3_.quantity as quantity8_3_2_,
+        catalogue3_.short_desc as short_de9_3_2_,
+        catalogue3_.status as status10_3_2_,
+        currency4_.currency_id as currency1_5_3_,
+        currency4_.created_at as created_2_5_3_,
+        currency4_.updated_at as updated_3_5_3_,
+        currency4_.currency_code as currency4_5_3_,
+        currency4_.currency_name as currency5_5_3_,
+        currency4_.decimal_points as decimal_6_5_3_,
+        orderdetai5_.order_detail_id as order_de1_6_4_,
+        orderdetai5_.created_at as created_2_6_4_,
+        orderdetai5_.updated_at as updated_3_6_4_,
+        orderdetai5_.capture_at as capture_4_6_4_,
+        orderdetai5_.capture_failure_reason as capture_5_6_4_,
+        orderdetai5_.capture_retry_times as capture_6_6_4_,
+        orderdetai5_.capture_status as capture_7_6_4_,
+        orderdetai5_.channel as channel8_6_4_,
+        orderdetai5_.currency_id as currenc19_6_4_,
+        orderdetai5_.payment_authorized_amount as payment_9_6_4_,
+        orderdetai5_.payment_authorized_currency as payment10_6_4_,
+        orderdetai5_.payment_last_updated_at as payment11_6_4_,
+        orderdetai5_.payment_method as payment12_6_4_,
+        orderdetai5_.payment_platform as payment13_6_4_,
+        orderdetai5_.payment_provider as payment14_6_4_,
+        orderdetai5_.payment_status as payment15_6_4_,
+        orderdetai5_.process_lock as process16_6_4_,
+        orderdetai5_.status as status17_6_4_,
+        orderdetai5_.total_amount as total_a18_6_4_,
+        orderdetai5_.user_id as user_id20_6_4_,
+        user6_.user_id as user_id1_10_5_,
+        user6_.created_at as created_2_10_5_,
+        user6_.updated_at as updated_3_10_5_,
+        user6_.first_name as first_na4_10_5_,
+        user6_.last_name as last_nam5_10_5_,
+        orderdetai7_.user_id as user_id20_6_10_,
+        orderdetai7_.order_detail_id as order_de1_6_10_,
+        orderdetai7_.order_detail_id as order_de1_6_6_,
+        orderdetai7_.created_at as created_2_6_6_,
+        orderdetai7_.updated_at as updated_3_6_6_,
+        orderdetai7_.capture_at as capture_4_6_6_,
+        orderdetai7_.capture_failure_reason as capture_5_6_6_,
+        orderdetai7_.capture_retry_times as capture_6_6_6_,
+        orderdetai7_.capture_status as capture_7_6_6_,
+        orderdetai7_.channel as channel8_6_6_,
+        orderdetai7_.currency_id as currenc19_6_6_,
+        orderdetai7_.payment_authorized_amount as payment_9_6_6_,
+        orderdetai7_.payment_authorized_currency as payment10_6_6_,
+        orderdetai7_.payment_last_updated_at as payment11_6_6_,
+        orderdetai7_.payment_method as payment12_6_6_,
+        orderdetai7_.payment_platform as payment13_6_6_,
+        orderdetai7_.payment_provider as payment14_6_6_,
+        orderdetai7_.payment_status as payment15_6_6_,
+        orderdetai7_.process_lock as process16_6_6_,
+        orderdetai7_.status as status17_6_6_,
+        orderdetai7_.total_amount as total_a18_6_6_,
+        orderdetai7_.user_id as user_id20_6_6_ 
+    from
+        cart cart0_ 
+    inner join
+        currency currency1_ 
+            on cart0_.currency_id=currency1_.currency_id 
+    left outer join
+        product_item productite2_ 
+            on cart0_.cart_id=productite2_.cart_id 
+    left outer join
+        catalogue catalogue3_ 
+            on productite2_.catalogue_id=catalogue3_.catalogue_id 
+    left outer join
+        currency currency4_ 
+            on productite2_.currency_id=currency4_.currency_id 
+    left outer join
+        order_detail orderdetai5_ 
+            on productite2_.order_detail_id=orderdetai5_.order_detail_id 
+    inner join
+        user user6_ 
+            on cart0_.user_id=user6_.user_id 
+    left outer join
+        order_detail orderdetai7_ 
+            on user6_.user_id=orderdetai7_.user_id 
+    where
+        cart0_.user_id=?
+Hibernate: 
+    select
+        productite0_.order_detail_id as order_d11_8_0_,
+        productite0_.product_item_id as product_1_8_0_,
+        productite0_.product_item_id as product_1_8_1_,
+        productite0_.created_at as created_2_8_1_,
+        productite0_.updated_at as updated_3_8_1_,
+        productite0_.cart_id as cart_id8_8_1_,
+        productite0_.catalogue_id as catalogu9_8_1_,
+        productite0_.channel as channel4_8_1_,
+        productite0_.currency_id as currenc10_8_1_,
+        productite0_.order_detail_id as order_d11_8_1_,
+        productite0_.quantity as quantity5_8_1_,
+        productite0_.status as status6_8_1_,
+        productite0_.total_amount as total_am7_8_1_,
+        cart1_.cart_id as cart_id1_1_2_,
+        cart1_.created_at as created_2_1_2_,
+        cart1_.updated_at as updated_3_1_2_,
+        cart1_.channel as channel4_1_2_,
+        cart1_.currency_id as currency8_1_2_,
+        cart1_.quantity as quantity5_1_2_,
+        cart1_.status as status6_1_2_,
+        cart1_.total_amount as total_am7_1_2_,
+        cart1_.user_id as user_id9_1_2_,
+        currency2_.currency_id as currency1_5_3_,
+        currency2_.created_at as created_2_5_3_,
+        currency2_.updated_at as updated_3_5_3_,
+        currency2_.currency_code as currency4_5_3_,
+        currency2_.currency_name as currency5_5_3_,
+        currency2_.decimal_points as decimal_6_5_3_,
+        user3_.user_id as user_id1_10_4_,
+        user3_.created_at as created_2_10_4_,
+        user3_.updated_at as updated_3_10_4_,
+        user3_.first_name as first_na4_10_4_,
+        user3_.last_name as last_nam5_10_4_,
+        catalogue4_.catalogue_id as catalogu1_3_5_,
+        catalogue4_.created_at as created_2_3_5_,
+        catalogue4_.updated_at as updated_3_3_5_,
+        catalogue4_.catagory as catagory4_3_5_,
+        catalogue4_.currency_id as currenc11_3_5_,
+        catalogue4_.display_name as display_5_3_5_,
+        catalogue4_.long_desc as long_des6_3_5_,
+        catalogue4_.price as price7_3_5_,
+        catalogue4_.quantity as quantity8_3_5_,
+        catalogue4_.short_desc as short_de9_3_5_,
+        catalogue4_.status as status10_3_5_,
+        currency5_.currency_id as currency1_5_6_,
+        currency5_.created_at as created_2_5_6_,
+        currency5_.updated_at as updated_3_5_6_,
+        currency5_.currency_code as currency4_5_6_,
+        currency5_.currency_name as currency5_5_6_,
+        currency5_.decimal_points as decimal_6_5_6_,
+        currency6_.currency_id as currency1_5_7_,
+        currency6_.created_at as created_2_5_7_,
+        currency6_.updated_at as updated_3_5_7_,
+        currency6_.currency_code as currency4_5_7_,
+        currency6_.currency_name as currency5_5_7_,
+        currency6_.decimal_points as decimal_6_5_7_ 
+    from
+        product_item productite0_ 
+    inner join
+        cart cart1_ 
+            on productite0_.cart_id=cart1_.cart_id 
+    inner join
+        currency currency2_ 
+            on cart1_.currency_id=currency2_.currency_id 
+    inner join
+        user user3_ 
+            on cart1_.user_id=user3_.user_id 
+    inner join
+        catalogue catalogue4_ 
+            on productite0_.catalogue_id=catalogue4_.catalogue_id 
+    inner join
+        currency currency5_ 
+            on catalogue4_.currency_id=currency5_.currency_id 
+    inner join
+        currency currency6_ 
+            on productite0_.currency_id=currency6_.currency_id 
+    where
+        productite0_.order_detail_id=?
+Hibernate: 
+    select
+        productite0_.order_detail_id as order_d11_8_0_,
+        productite0_.product_item_id as product_1_8_0_,
+        productite0_.product_item_id as product_1_8_1_,
+        productite0_.created_at as created_2_8_1_,
+        productite0_.updated_at as updated_3_8_1_,
+        productite0_.cart_id as cart_id8_8_1_,
+        productite0_.catalogue_id as catalogu9_8_1_,
+        productite0_.channel as channel4_8_1_,
+        productite0_.currency_id as currenc10_8_1_,
+        productite0_.order_detail_id as order_d11_8_1_,
+        productite0_.quantity as quantity5_8_1_,
+        productite0_.status as status6_8_1_,
+        productite0_.total_amount as total_am7_8_1_,
+        cart1_.cart_id as cart_id1_1_2_,
+        cart1_.created_at as created_2_1_2_,
+        cart1_.updated_at as updated_3_1_2_,
+        cart1_.channel as channel4_1_2_,
+        cart1_.currency_id as currency8_1_2_,
+        cart1_.quantity as quantity5_1_2_,
+        cart1_.status as status6_1_2_,
+        cart1_.total_amount as total_am7_1_2_,
+        cart1_.user_id as user_id9_1_2_,
+        currency2_.currency_id as currency1_5_3_,
+        currency2_.created_at as created_2_5_3_,
+        currency2_.updated_at as updated_3_5_3_,
+        currency2_.currency_code as currency4_5_3_,
+        currency2_.currency_name as currency5_5_3_,
+        currency2_.decimal_points as decimal_6_5_3_,
+        user3_.user_id as user_id1_10_4_,
+        user3_.created_at as created_2_10_4_,
+        user3_.updated_at as updated_3_10_4_,
+        user3_.first_name as first_na4_10_4_,
+        user3_.last_name as last_nam5_10_4_,
+        catalogue4_.catalogue_id as catalogu1_3_5_,
+        catalogue4_.created_at as created_2_3_5_,
+        catalogue4_.updated_at as updated_3_3_5_,
+        catalogue4_.catagory as catagory4_3_5_,
+        catalogue4_.currency_id as currenc11_3_5_,
+        catalogue4_.display_name as display_5_3_5_,
+        catalogue4_.long_desc as long_des6_3_5_,
+        catalogue4_.price as price7_3_5_,
+        catalogue4_.quantity as quantity8_3_5_,
+        catalogue4_.short_desc as short_de9_3_5_,
+        catalogue4_.status as status10_3_5_,
+        currency5_.currency_id as currency1_5_6_,
+        currency5_.created_at as created_2_5_6_,
+        currency5_.updated_at as updated_3_5_6_,
+        currency5_.currency_code as currency4_5_6_,
+        currency5_.currency_name as currency5_5_6_,
+        currency5_.decimal_points as decimal_6_5_6_,
+        currency6_.currency_id as currency1_5_7_,
+        currency6_.created_at as created_2_5_7_,
+        currency6_.updated_at as updated_3_5_7_,
+        currency6_.currency_code as currency4_5_7_,
+        currency6_.currency_name as currency5_5_7_,
+        currency6_.decimal_points as decimal_6_5_7_ 
+    from
+        product_item productite0_ 
+    inner join
+        cart cart1_ 
+            on productite0_.cart_id=cart1_.cart_id 
+    inner join
+        currency currency2_ 
+            on cart1_.currency_id=currency2_.currency_id 
+    inner join
+        user user3_ 
+            on cart1_.user_id=user3_.user_id 
+    inner join
+        catalogue catalogue4_ 
+            on productite0_.catalogue_id=catalogue4_.catalogue_id 
+    inner join
+        currency currency5_ 
+            on catalogue4_.currency_id=currency5_.currency_id 
+    inner join
+        currency currency6_ 
+            on productite0_.currency_id=currency6_.currency_id 
+    where
+        productite0_.order_detail_id=?
+Hibernate: 
+    select
+        productite0_.order_detail_id as order_d11_8_0_,
+        productite0_.product_item_id as product_1_8_0_,
+        productite0_.product_item_id as product_1_8_1_,
+        productite0_.created_at as created_2_8_1_,
+        productite0_.updated_at as updated_3_8_1_,
+        productite0_.cart_id as cart_id8_8_1_,
+        productite0_.catalogue_id as catalogu9_8_1_,
+        productite0_.channel as channel4_8_1_,
+        productite0_.currency_id as currenc10_8_1_,
+        productite0_.order_detail_id as order_d11_8_1_,
+        productite0_.quantity as quantity5_8_1_,
+        productite0_.status as status6_8_1_,
+        productite0_.total_amount as total_am7_8_1_,
+        cart1_.cart_id as cart_id1_1_2_,
+        cart1_.created_at as created_2_1_2_,
+        cart1_.updated_at as updated_3_1_2_,
+        cart1_.channel as channel4_1_2_,
+        cart1_.currency_id as currency8_1_2_,
+        cart1_.quantity as quantity5_1_2_,
+        cart1_.status as status6_1_2_,
+        cart1_.total_amount as total_am7_1_2_,
+        cart1_.user_id as user_id9_1_2_,
+        currency2_.currency_id as currency1_5_3_,
+        currency2_.created_at as created_2_5_3_,
+        currency2_.updated_at as updated_3_5_3_,
+        currency2_.currency_code as currency4_5_3_,
+        currency2_.currency_name as currency5_5_3_,
+        currency2_.decimal_points as decimal_6_5_3_,
+        user3_.user_id as user_id1_10_4_,
+        user3_.created_at as created_2_10_4_,
+        user3_.updated_at as updated_3_10_4_,
+        user3_.first_name as first_na4_10_4_,
+        user3_.last_name as last_nam5_10_4_,
+        catalogue4_.catalogue_id as catalogu1_3_5_,
+        catalogue4_.created_at as created_2_3_5_,
+        catalogue4_.updated_at as updated_3_3_5_,
+        catalogue4_.catagory as catagory4_3_5_,
+        catalogue4_.currency_id as currenc11_3_5_,
+        catalogue4_.display_name as display_5_3_5_,
+        catalogue4_.long_desc as long_des6_3_5_,
+        catalogue4_.price as price7_3_5_,
+        catalogue4_.quantity as quantity8_3_5_,
+        catalogue4_.short_desc as short_de9_3_5_,
+        catalogue4_.status as status10_3_5_,
+        currency5_.currency_id as currency1_5_6_,
+        currency5_.created_at as created_2_5_6_,
+        currency5_.updated_at as updated_3_5_6_,
+        currency5_.currency_code as currency4_5_6_,
+        currency5_.currency_name as currency5_5_6_,
+        currency5_.decimal_points as decimal_6_5_6_,
+        currency6_.currency_id as currency1_5_7_,
+        currency6_.created_at as created_2_5_7_,
+        currency6_.updated_at as updated_3_5_7_,
+        currency6_.currency_code as currency4_5_7_,
+        currency6_.currency_name as currency5_5_7_,
+        currency6_.decimal_points as decimal_6_5_7_ 
+    from
+        product_item productite0_ 
+    inner join
+        cart cart1_ 
+            on productite0_.cart_id=cart1_.cart_id 
+    inner join
+        currency currency2_ 
+            on cart1_.currency_id=currency2_.currency_id 
+    inner join
+        user user3_ 
+            on cart1_.user_id=user3_.user_id 
+    inner join
+        catalogue catalogue4_ 
+            on productite0_.catalogue_id=catalogue4_.catalogue_id 
+    inner join
+        currency currency5_ 
+            on catalogue4_.currency_id=currency5_.currency_id 
+    inner join
+        currency currency6_ 
+            on productite0_.currency_id=currency6_.currency_id 
+    where
+        productite0_.order_detail_id=?
+Hibernate: 
+    select
+        productite0_.order_detail_id as order_d11_8_0_,
+        productite0_.product_item_id as product_1_8_0_,
+        productite0_.product_item_id as product_1_8_1_,
+        productite0_.created_at as created_2_8_1_,
+        productite0_.updated_at as updated_3_8_1_,
+        productite0_.cart_id as cart_id8_8_1_,
+        productite0_.catalogue_id as catalogu9_8_1_,
+        productite0_.channel as channel4_8_1_,
+        productite0_.currency_id as currenc10_8_1_,
+        productite0_.order_detail_id as order_d11_8_1_,
+        productite0_.quantity as quantity5_8_1_,
+        productite0_.status as status6_8_1_,
+        productite0_.total_amount as total_am7_8_1_,
+        cart1_.cart_id as cart_id1_1_2_,
+        cart1_.created_at as created_2_1_2_,
+        cart1_.updated_at as updated_3_1_2_,
+        cart1_.channel as channel4_1_2_,
+        cart1_.currency_id as currency8_1_2_,
+        cart1_.quantity as quantity5_1_2_,
+        cart1_.status as status6_1_2_,
+        cart1_.total_amount as total_am7_1_2_,
+        cart1_.user_id as user_id9_1_2_,
+        currency2_.currency_id as currency1_5_3_,
+        currency2_.created_at as created_2_5_3_,
+        currency2_.updated_at as updated_3_5_3_,
+        currency2_.currency_code as currency4_5_3_,
+        currency2_.currency_name as currency5_5_3_,
+        currency2_.decimal_points as decimal_6_5_3_,
+        user3_.user_id as user_id1_10_4_,
+        user3_.created_at as created_2_10_4_,
+        user3_.updated_at as updated_3_10_4_,
+        user3_.first_name as first_na4_10_4_,
+        user3_.last_name as last_nam5_10_4_,
+        catalogue4_.catalogue_id as catalogu1_3_5_,
+        catalogue4_.created_at as created_2_3_5_,
+        catalogue4_.updated_at as updated_3_3_5_,
+        catalogue4_.catagory as catagory4_3_5_,
+        catalogue4_.currency_id as currenc11_3_5_,
+        catalogue4_.display_name as display_5_3_5_,
+        catalogue4_.long_desc as long_des6_3_5_,
+        catalogue4_.price as price7_3_5_,
+        catalogue4_.quantity as quantity8_3_5_,
+        catalogue4_.short_desc as short_de9_3_5_,
+        catalogue4_.status as status10_3_5_,
+        currency5_.currency_id as currency1_5_6_,
+        currency5_.created_at as created_2_5_6_,
+        currency5_.updated_at as updated_3_5_6_,
+        currency5_.currency_code as currency4_5_6_,
+        currency5_.currency_name as currency5_5_6_,
+        currency5_.decimal_points as decimal_6_5_6_,
+        currency6_.currency_id as currency1_5_7_,
+        currency6_.created_at as created_2_5_7_,
+        currency6_.updated_at as updated_3_5_7_,
+        currency6_.currency_code as currency4_5_7_,
+        currency6_.currency_name as currency5_5_7_,
+        currency6_.decimal_points as decimal_6_5_7_ 
+    from
+        product_item productite0_ 
+    inner join
+        cart cart1_ 
+            on productite0_.cart_id=cart1_.cart_id 
+    inner join
+        currency currency2_ 
+            on cart1_.currency_id=currency2_.currency_id 
+    inner join
+        user user3_ 
+            on cart1_.user_id=user3_.user_id 
+    inner join
+        catalogue catalogue4_ 
+            on productite0_.catalogue_id=catalogue4_.catalogue_id 
+    inner join
+        currency currency5_ 
+            on catalogue4_.currency_id=currency5_.currency_id 
+    inner join
+        currency currency6_ 
+            on productite0_.currency_id=currency6_.currency_id 
+    where
+        productite0_.order_detail_id=?
+Hibernate: 
+    select
+        userarch0_.user_id as user_id1_11_2_,
+        userarch0_.created_at as created_2_11_2_,
+        userarch0_.updated_at as updated_3_11_2_,
+        userarch0_.first_name as first_na4_11_2_,
+        userarch0_.last_name as last_nam5_11_2_,
+        orderdetai1_.user_id as user_id20_7_4_,
+        orderdetai1_.order_detail_id as order_de1_7_4_,
+        orderdetai1_.order_detail_id as order_de1_7_0_,
+        orderdetai1_.created_at as created_2_7_0_,
+        orderdetai1_.updated_at as updated_3_7_0_,
+        orderdetai1_.capture_at as capture_4_7_0_,
+        orderdetai1_.capture_failure_reason as capture_5_7_0_,
+        orderdetai1_.capture_retry_times as capture_6_7_0_,
+        orderdetai1_.capture_status as capture_7_7_0_,
+        orderdetai1_.channel as channel8_7_0_,
+        orderdetai1_.currency_id as currenc19_7_0_,
+        orderdetai1_.payment_authorized_amount as payment_9_7_0_,
+        orderdetai1_.payment_authorized_currency as payment10_7_0_,
+        orderdetai1_.payment_last_updated_at as payment11_7_0_,
+        orderdetai1_.payment_method as payment12_7_0_,
+        orderdetai1_.payment_platform as payment13_7_0_,
+        orderdetai1_.payment_provider as payment14_7_0_,
+        orderdetai1_.payment_status as payment15_7_0_,
+        orderdetai1_.process_lock as process16_7_0_,
+        orderdetai1_.status as status17_7_0_,
+        orderdetai1_.total_amount as total_a18_7_0_,
+        orderdetai1_.user_id as user_id20_7_0_,
+        cartarch2_.cart_id as cart_id1_2_1_,
+        cartarch2_.created_at as created_2_2_1_,
+        cartarch2_.updated_at as updated_3_2_1_,
+        cartarch2_.channel as channel4_2_1_,
+        cartarch2_.currency_id as currency8_2_1_,
+        cartarch2_.quantity as quantity5_2_1_,
+        cartarch2_.status as status6_2_1_,
+        cartarch2_.total_amount as total_am7_2_1_,
+        cartarch2_.user_id as user_id9_2_1_ 
+    from
+        user_arch userarch0_ 
+    left outer join
+        order_detail_arch orderdetai1_ 
+            on userarch0_.user_id=orderdetai1_.user_id 
+    left outer join
+        cart_arch cartarch2_ 
+            on userarch0_.user_id=cartarch2_.user_id 
+    where
+        userarch0_.user_id=?
+Hibernate: 
+    select
+        orderdetai0_.order_detail_id as order_de1_7_0_,
+        orderdetai0_.created_at as created_2_7_0_,
+        orderdetai0_.updated_at as updated_3_7_0_,
+        orderdetai0_.capture_at as capture_4_7_0_,
+        orderdetai0_.capture_failure_reason as capture_5_7_0_,
+        orderdetai0_.capture_retry_times as capture_6_7_0_,
+        orderdetai0_.capture_status as capture_7_7_0_,
+        orderdetai0_.channel as channel8_7_0_,
+        orderdetai0_.currency_id as currenc19_7_0_,
+        orderdetai0_.payment_authorized_amount as payment_9_7_0_,
+        orderdetai0_.payment_authorized_currency as payment10_7_0_,
+        orderdetai0_.payment_last_updated_at as payment11_7_0_,
+        orderdetai0_.payment_method as payment12_7_0_,
+        orderdetai0_.payment_platform as payment13_7_0_,
+        orderdetai0_.payment_provider as payment14_7_0_,
+        orderdetai0_.payment_status as payment15_7_0_,
+        orderdetai0_.process_lock as process16_7_0_,
+        orderdetai0_.status as status17_7_0_,
+        orderdetai0_.total_amount as total_a18_7_0_,
+        orderdetai0_.user_id as user_id20_7_0_ 
+    from
+        order_detail_arch orderdetai0_ 
+    where
+        orderdetai0_.order_detail_id=?
+Hibernate: 
+    select
+        cartarch0_.cart_id as cart_id1_2_1_,
+        cartarch0_.created_at as created_2_2_1_,
+        cartarch0_.updated_at as updated_3_2_1_,
+        cartarch0_.channel as channel4_2_1_,
+        cartarch0_.currency_id as currency8_2_1_,
+        cartarch0_.quantity as quantity5_2_1_,
+        cartarch0_.status as status6_2_1_,
+        cartarch0_.total_amount as total_am7_2_1_,
+        cartarch0_.user_id as user_id9_2_1_,
+        productite1_.cart_id as cart_id8_9_3_,
+        productite1_.product_item_id as product_1_9_3_,
+        productite1_.product_item_id as product_1_9_0_,
+        productite1_.created_at as created_2_9_0_,
+        productite1_.updated_at as updated_3_9_0_,
+        productite1_.cart_id as cart_id8_9_0_,
+        productite1_.catalogue_id as catalogu9_9_0_,
+        productite1_.channel as channel4_9_0_,
+        productite1_.currency_id as currenc10_9_0_,
+        productite1_.order_detail_id as order_d11_9_0_,
+        productite1_.quantity as quantity5_9_0_,
+        productite1_.status as status6_9_0_,
+        productite1_.total_amount as total_am7_9_0_ 
+    from
+        cart_arch cartarch0_ 
+    left outer join
+        product_item_arch productite1_ 
+            on cartarch0_.cart_id=productite1_.cart_id 
+    where
+        cartarch0_.cart_id=?
+Hibernate: 
+    select
+        productite0_.product_item_id as product_1_9_0_,
+        productite0_.created_at as created_2_9_0_,
+        productite0_.updated_at as updated_3_9_0_,
+        productite0_.cart_id as cart_id8_9_0_,
+        productite0_.catalogue_id as catalogu9_9_0_,
+        productite0_.channel as channel4_9_0_,
+        productite0_.currency_id as currenc10_9_0_,
+        productite0_.order_detail_id as order_d11_9_0_,
+        productite0_.quantity as quantity5_9_0_,
+        productite0_.status as status6_9_0_,
+        productite0_.total_amount as total_am7_9_0_ 
+    from
+        product_item_arch productite0_ 
+    where
+        productite0_.product_item_id=?
+Hibernate: 
+    select
+        productite0_.product_item_id as product_1_9_0_,
+        productite0_.created_at as created_2_9_0_,
+        productite0_.updated_at as updated_3_9_0_,
+        productite0_.cart_id as cart_id8_9_0_,
+        productite0_.catalogue_id as catalogu9_9_0_,
+        productite0_.channel as channel4_9_0_,
+        productite0_.currency_id as currenc10_9_0_,
+        productite0_.order_detail_id as order_d11_9_0_,
+        productite0_.quantity as quantity5_9_0_,
+        productite0_.status as status6_9_0_,
+        productite0_.total_amount as total_am7_9_0_ 
+    from
+        product_item_arch productite0_ 
+    where
+        productite0_.product_item_id=?
+Hibernate: 
+    select
+        productite0_.product_item_id as product_1_9_0_,
+        productite0_.created_at as created_2_9_0_,
+        productite0_.updated_at as updated_3_9_0_,
+        productite0_.cart_id as cart_id8_9_0_,
+        productite0_.catalogue_id as catalogu9_9_0_,
+        productite0_.channel as channel4_9_0_,
+        productite0_.currency_id as currenc10_9_0_,
+        productite0_.order_detail_id as order_d11_9_0_,
+        productite0_.quantity as quantity5_9_0_,
+        productite0_.status as status6_9_0_,
+        productite0_.total_amount as total_am7_9_0_ 
+    from
+        product_item_arch productite0_ 
+    where
+        productite0_.product_item_id=?
+Hibernate: 
+    select
+        productite0_.product_item_id as product_1_9_0_,
+        productite0_.created_at as created_2_9_0_,
+        productite0_.updated_at as updated_3_9_0_,
+        productite0_.cart_id as cart_id8_9_0_,
+        productite0_.catalogue_id as catalogu9_9_0_,
+        productite0_.channel as channel4_9_0_,
+        productite0_.currency_id as currenc10_9_0_,
+        productite0_.order_detail_id as order_d11_9_0_,
+        productite0_.quantity as quantity5_9_0_,
+        productite0_.status as status6_9_0_,
+        productite0_.total_amount as total_am7_9_0_ 
+    from
+        product_item_arch productite0_ 
+    where
+        productite0_.product_item_id=?
+Hibernate: 
+    insert 
+    into
+        user_arch
+        (created_at, updated_at, first_name, last_name, user_id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_detail_arch
+        (created_at, updated_at, capture_at, capture_failure_reason, capture_retry_times, capture_status, channel, currency_id, payment_authorized_amount, payment_authorized_currency, payment_last_updated_at, payment_method, payment_platform, payment_provider, payment_status, process_lock, status, total_amount, user_id, order_detail_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        cart_arch
+        (created_at, updated_at, channel, currency_id, quantity, status, total_amount, user_id, cart_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_item_arch
+        (created_at, updated_at, cart_id, catalogue_id, channel, currency_id, order_detail_id, quantity, status, total_amount, product_item_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_item_arch
+        (created_at, updated_at, cart_id, catalogue_id, channel, currency_id, order_detail_id, quantity, status, total_amount, product_item_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_item_arch
+        (created_at, updated_at, cart_id, catalogue_id, channel, currency_id, order_detail_id, quantity, status, total_amount, product_item_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_item_arch
+        (created_at, updated_at, cart_id, catalogue_id, channel, currency_id, order_detail_id, quantity, status, total_amount, product_item_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        userarch0_.user_id as user_id1_11_2_,
+        userarch0_.created_at as created_2_11_2_,
+        userarch0_.updated_at as updated_3_11_2_,
+        userarch0_.first_name as first_na4_11_2_,
+        userarch0_.last_name as last_nam5_11_2_,
+        orderdetai1_.user_id as user_id20_7_4_,
+        orderdetai1_.order_detail_id as order_de1_7_4_,
+        orderdetai1_.order_detail_id as order_de1_7_0_,
+        orderdetai1_.created_at as created_2_7_0_,
+        orderdetai1_.updated_at as updated_3_7_0_,
+        orderdetai1_.capture_at as capture_4_7_0_,
+        orderdetai1_.capture_failure_reason as capture_5_7_0_,
+        orderdetai1_.capture_retry_times as capture_6_7_0_,
+        orderdetai1_.capture_status as capture_7_7_0_,
+        orderdetai1_.channel as channel8_7_0_,
+        orderdetai1_.currency_id as currenc19_7_0_,
+        orderdetai1_.payment_authorized_amount as payment_9_7_0_,
+        orderdetai1_.payment_authorized_currency as payment10_7_0_,
+        orderdetai1_.payment_last_updated_at as payment11_7_0_,
+        orderdetai1_.payment_method as payment12_7_0_,
+        orderdetai1_.payment_platform as payment13_7_0_,
+        orderdetai1_.payment_provider as payment14_7_0_,
+        orderdetai1_.payment_status as payment15_7_0_,
+        orderdetai1_.process_lock as process16_7_0_,
+        orderdetai1_.status as status17_7_0_,
+        orderdetai1_.total_amount as total_a18_7_0_,
+        orderdetai1_.user_id as user_id20_7_0_,
+        cartarch2_.cart_id as cart_id1_2_1_,
+        cartarch2_.created_at as created_2_2_1_,
+        cartarch2_.updated_at as updated_3_2_1_,
+        cartarch2_.channel as channel4_2_1_,
+        cartarch2_.currency_id as currency8_2_1_,
+        cartarch2_.quantity as quantity5_2_1_,
+        cartarch2_.status as status6_2_1_,
+        cartarch2_.total_amount as total_am7_2_1_,
+        cartarch2_.user_id as user_id9_2_1_ 
+    from
+        user_arch userarch0_ 
+    left outer join
+        order_detail_arch orderdetai1_ 
+            on userarch0_.user_id=orderdetai1_.user_id 
+    left outer join
+        cart_arch cartarch2_ 
+            on userarch0_.user_id=cartarch2_.user_id 
+    where
+        userarch0_.user_id=?
+Hibernate: 
+    select
+        orderdetai0_.order_detail_id as order_de1_7_0_,
+        orderdetai0_.created_at as created_2_7_0_,
+        orderdetai0_.updated_at as updated_3_7_0_,
+        orderdetai0_.capture_at as capture_4_7_0_,
+        orderdetai0_.capture_failure_reason as capture_5_7_0_,
+        orderdetai0_.capture_retry_times as capture_6_7_0_,
+        orderdetai0_.capture_status as capture_7_7_0_,
+        orderdetai0_.channel as channel8_7_0_,
+        orderdetai0_.currency_id as currenc19_7_0_,
+        orderdetai0_.payment_authorized_amount as payment_9_7_0_,
+        orderdetai0_.payment_authorized_currency as payment10_7_0_,
+        orderdetai0_.payment_last_updated_at as payment11_7_0_,
+        orderdetai0_.payment_method as payment12_7_0_,
+        orderdetai0_.payment_platform as payment13_7_0_,
+        orderdetai0_.payment_provider as payment14_7_0_,
+        orderdetai0_.payment_status as payment15_7_0_,
+        orderdetai0_.process_lock as process16_7_0_,
+        orderdetai0_.status as status17_7_0_,
+        orderdetai0_.total_amount as total_a18_7_0_,
+        orderdetai0_.user_id as user_id20_7_0_ 
+    from
+        order_detail_arch orderdetai0_ 
+    where
+        orderdetai0_.order_detail_id=?
+Hibernate: 
+    select
+        orderdetai0_.order_detail_id as order_de1_7_0_,
+        orderdetai0_.created_at as created_2_7_0_,
+        orderdetai0_.updated_at as updated_3_7_0_,
+        orderdetai0_.capture_at as capture_4_7_0_,
+        orderdetai0_.capture_failure_reason as capture_5_7_0_,
+        orderdetai0_.capture_retry_times as capture_6_7_0_,
+        orderdetai0_.capture_status as capture_7_7_0_,
+        orderdetai0_.channel as channel8_7_0_,
+        orderdetai0_.currency_id as currenc19_7_0_,
+        orderdetai0_.payment_authorized_amount as payment_9_7_0_,
+        orderdetai0_.payment_authorized_currency as payment10_7_0_,
+        orderdetai0_.payment_last_updated_at as payment11_7_0_,
+        orderdetai0_.payment_method as payment12_7_0_,
+        orderdetai0_.payment_platform as payment13_7_0_,
+        orderdetai0_.payment_provider as payment14_7_0_,
+        orderdetai0_.payment_status as payment15_7_0_,
+        orderdetai0_.process_lock as process16_7_0_,
+        orderdetai0_.status as status17_7_0_,
+        orderdetai0_.total_amount as total_a18_7_0_,
+        orderdetai0_.user_id as user_id20_7_0_ 
+    from
+        order_detail_arch orderdetai0_ 
+    where
+        orderdetai0_.order_detail_id=?
+Hibernate: 
+    select
+        cartarch0_.cart_id as cart_id1_2_1_,
+        cartarch0_.created_at as created_2_2_1_,
+        cartarch0_.updated_at as updated_3_2_1_,
+        cartarch0_.channel as channel4_2_1_,
+        cartarch0_.currency_id as currency8_2_1_,
+        cartarch0_.quantity as quantity5_2_1_,
+        cartarch0_.status as status6_2_1_,
+        cartarch0_.total_amount as total_am7_2_1_,
+        cartarch0_.user_id as user_id9_2_1_,
+        productite1_.cart_id as cart_id8_9_3_,
+        productite1_.product_item_id as product_1_9_3_,
+        productite1_.product_item_id as product_1_9_0_,
+        productite1_.created_at as created_2_9_0_,
+        productite1_.updated_at as updated_3_9_0_,
+        productite1_.cart_id as cart_id8_9_0_,
+        productite1_.catalogue_id as catalogu9_9_0_,
+        productite1_.channel as channel4_9_0_,
+        productite1_.currency_id as currenc10_9_0_,
+        productite1_.order_detail_id as order_d11_9_0_,
+        productite1_.quantity as quantity5_9_0_,
+        productite1_.status as status6_9_0_,
+        productite1_.total_amount as total_am7_9_0_ 
+    from
+        cart_arch cartarch0_ 
+    left outer join
+        product_item_arch productite1_ 
+            on cartarch0_.cart_id=productite1_.cart_id 
+    where
+        cartarch0_.cart_id=?
+Hibernate: 
+    select
+        productite0_.product_item_id as product_1_9_0_,
+        productite0_.created_at as created_2_9_0_,
+        productite0_.updated_at as updated_3_9_0_,
+        productite0_.cart_id as cart_id8_9_0_,
+        productite0_.catalogue_id as catalogu9_9_0_,
+        productite0_.channel as channel4_9_0_,
+        productite0_.currency_id as currenc10_9_0_,
+        productite0_.order_detail_id as order_d11_9_0_,
+        productite0_.quantity as quantity5_9_0_,
+        productite0_.status as status6_9_0_,
+        productite0_.total_amount as total_am7_9_0_ 
+    from
+        product_item_arch productite0_ 
+    where
+        productite0_.product_item_id=?
+Hibernate: 
+    select
+        productite0_.product_item_id as product_1_9_0_,
+        productite0_.created_at as created_2_9_0_,
+        productite0_.updated_at as updated_3_9_0_,
+        productite0_.cart_id as cart_id8_9_0_,
+        productite0_.catalogue_id as catalogu9_9_0_,
+        productite0_.channel as channel4_9_0_,
+        productite0_.currency_id as currenc10_9_0_,
+        productite0_.order_detail_id as order_d11_9_0_,
+        productite0_.quantity as quantity5_9_0_,
+        productite0_.status as status6_9_0_,
+        productite0_.total_amount as total_am7_9_0_ 
+    from
+        product_item_arch productite0_ 
+    where
+        productite0_.product_item_id=?
+Hibernate: 
+    select
+        productite0_.product_item_id as product_1_9_0_,
+        productite0_.created_at as created_2_9_0_,
+        productite0_.updated_at as updated_3_9_0_,
+        productite0_.cart_id as cart_id8_9_0_,
+        productite0_.catalogue_id as catalogu9_9_0_,
+        productite0_.channel as channel4_9_0_,
+        productite0_.currency_id as currenc10_9_0_,
+        productite0_.order_detail_id as order_d11_9_0_,
+        productite0_.quantity as quantity5_9_0_,
+        productite0_.status as status6_9_0_,
+        productite0_.total_amount as total_am7_9_0_ 
+    from
+        product_item_arch productite0_ 
+    where
+        productite0_.product_item_id=?
+Hibernate: 
+    select
+        productite0_.product_item_id as product_1_9_0_,
+        productite0_.created_at as created_2_9_0_,
+        productite0_.updated_at as updated_3_9_0_,
+        productite0_.cart_id as cart_id8_9_0_,
+        productite0_.catalogue_id as catalogu9_9_0_,
+        productite0_.channel as channel4_9_0_,
+        productite0_.currency_id as currenc10_9_0_,
+        productite0_.order_detail_id as order_d11_9_0_,
+        productite0_.quantity as quantity5_9_0_,
+        productite0_.status as status6_9_0_,
+        productite0_.total_amount as total_am7_9_0_ 
+    from
+        product_item_arch productite0_ 
+    where
+        productite0_.product_item_id=?
+Hibernate: 
+    insert 
+    into
+        user_arch
+        (created_at, updated_at, first_name, last_name, user_id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_detail_arch
+        (created_at, updated_at, capture_at, capture_failure_reason, capture_retry_times, capture_status, channel, currency_id, payment_authorized_amount, payment_authorized_currency, payment_last_updated_at, payment_method, payment_platform, payment_provider, payment_status, process_lock, status, total_amount, user_id, order_detail_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_detail_arch
+        (created_at, updated_at, capture_at, capture_failure_reason, capture_retry_times, capture_status, channel, currency_id, payment_authorized_amount, payment_authorized_currency, payment_last_updated_at, payment_method, payment_platform, payment_provider, payment_status, process_lock, status, total_amount, user_id, order_detail_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        cart_arch
+        (created_at, updated_at, channel, currency_id, quantity, status, total_amount, user_id, cart_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_item_arch
+        (created_at, updated_at, cart_id, catalogue_id, channel, currency_id, order_detail_id, quantity, status, total_amount, product_item_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_item_arch
+        (created_at, updated_at, cart_id, catalogue_id, channel, currency_id, order_detail_id, quantity, status, total_amount, product_item_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_item_arch
+        (created_at, updated_at, cart_id, catalogue_id, channel, currency_id, order_detail_id, quantity, status, total_amount, product_item_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_item_arch
+        (created_at, updated_at, cart_id, catalogue_id, channel, currency_id, order_detail_id, quantity, status, total_amount, product_item_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        userarch0_.user_id as user_id1_11_2_,
+        userarch0_.created_at as created_2_11_2_,
+        userarch0_.updated_at as updated_3_11_2_,
+        userarch0_.first_name as first_na4_11_2_,
+        userarch0_.last_name as last_nam5_11_2_,
+        orderdetai1_.user_id as user_id20_7_4_,
+        orderdetai1_.order_detail_id as order_de1_7_4_,
+        orderdetai1_.order_detail_id as order_de1_7_0_,
+        orderdetai1_.created_at as created_2_7_0_,
+        orderdetai1_.updated_at as updated_3_7_0_,
+        orderdetai1_.capture_at as capture_4_7_0_,
+        orderdetai1_.capture_failure_reason as capture_5_7_0_,
+        orderdetai1_.capture_retry_times as capture_6_7_0_,
+        orderdetai1_.capture_status as capture_7_7_0_,
+        orderdetai1_.channel as channel8_7_0_,
+        orderdetai1_.currency_id as currenc19_7_0_,
+        orderdetai1_.payment_authorized_amount as payment_9_7_0_,
+        orderdetai1_.payment_authorized_currency as payment10_7_0_,
+        orderdetai1_.payment_last_updated_at as payment11_7_0_,
+        orderdetai1_.payment_method as payment12_7_0_,
+        orderdetai1_.payment_platform as payment13_7_0_,
+        orderdetai1_.payment_provider as payment14_7_0_,
+        orderdetai1_.payment_status as payment15_7_0_,
+        orderdetai1_.process_lock as process16_7_0_,
+        orderdetai1_.status as status17_7_0_,
+        orderdetai1_.total_amount as total_a18_7_0_,
+        orderdetai1_.user_id as user_id20_7_0_,
+        cartarch2_.cart_id as cart_id1_2_1_,
+        cartarch2_.created_at as created_2_2_1_,
+        cartarch2_.updated_at as updated_3_2_1_,
+        cartarch2_.channel as channel4_2_1_,
+        cartarch2_.currency_id as currency8_2_1_,
+        cartarch2_.quantity as quantity5_2_1_,
+        cartarch2_.status as status6_2_1_,
+        cartarch2_.total_amount as total_am7_2_1_,
+        cartarch2_.user_id as user_id9_2_1_ 
+    from
+        user_arch userarch0_ 
+    left outer join
+        order_detail_arch orderdetai1_ 
+            on userarch0_.user_id=orderdetai1_.user_id 
+    left outer join
+        cart_arch cartarch2_ 
+            on userarch0_.user_id=cartarch2_.user_id 
+    where
+        userarch0_.user_id=?
+Hibernate: 
+    select
+        orderdetai0_.order_detail_id as order_de1_7_0_,
+        orderdetai0_.created_at as created_2_7_0_,
+        orderdetai0_.updated_at as updated_3_7_0_,
+        orderdetai0_.capture_at as capture_4_7_0_,
+        orderdetai0_.capture_failure_reason as capture_5_7_0_,
+        orderdetai0_.capture_retry_times as capture_6_7_0_,
+        orderdetai0_.capture_status as capture_7_7_0_,
+        orderdetai0_.channel as channel8_7_0_,
+        orderdetai0_.currency_id as currenc19_7_0_,
+        orderdetai0_.payment_authorized_amount as payment_9_7_0_,
+        orderdetai0_.payment_authorized_currency as payment10_7_0_,
+        orderdetai0_.payment_last_updated_at as payment11_7_0_,
+        orderdetai0_.payment_method as payment12_7_0_,
+        orderdetai0_.payment_platform as payment13_7_0_,
+        orderdetai0_.payment_provider as payment14_7_0_,
+        orderdetai0_.payment_status as payment15_7_0_,
+        orderdetai0_.process_lock as process16_7_0_,
+        orderdetai0_.status as status17_7_0_,
+        orderdetai0_.total_amount as total_a18_7_0_,
+        orderdetai0_.user_id as user_id20_7_0_ 
+    from
+        order_detail_arch orderdetai0_ 
+    where
+        orderdetai0_.order_detail_id=?
+Hibernate: 
+    select
+        cartarch0_.cart_id as cart_id1_2_1_,
+        cartarch0_.created_at as created_2_2_1_,
+        cartarch0_.updated_at as updated_3_2_1_,
+        cartarch0_.channel as channel4_2_1_,
+        cartarch0_.currency_id as currency8_2_1_,
+        cartarch0_.quantity as quantity5_2_1_,
+        cartarch0_.status as status6_2_1_,
+        cartarch0_.total_amount as total_am7_2_1_,
+        cartarch0_.user_id as user_id9_2_1_,
+        productite1_.cart_id as cart_id8_9_3_,
+        productite1_.product_item_id as product_1_9_3_,
+        productite1_.product_item_id as product_1_9_0_,
+        productite1_.created_at as created_2_9_0_,
+        productite1_.updated_at as updated_3_9_0_,
+        productite1_.cart_id as cart_id8_9_0_,
+        productite1_.catalogue_id as catalogu9_9_0_,
+        productite1_.channel as channel4_9_0_,
+        productite1_.currency_id as currenc10_9_0_,
+        productite1_.order_detail_id as order_d11_9_0_,
+        productite1_.quantity as quantity5_9_0_,
+        productite1_.status as status6_9_0_,
+        productite1_.total_amount as total_am7_9_0_ 
+    from
+        cart_arch cartarch0_ 
+    left outer join
+        product_item_arch productite1_ 
+            on cartarch0_.cart_id=productite1_.cart_id 
+    where
+        cartarch0_.cart_id=?
+Hibernate: 
+    select
+        productite0_.product_item_id as product_1_9_0_,
+        productite0_.created_at as created_2_9_0_,
+        productite0_.updated_at as updated_3_9_0_,
+        productite0_.cart_id as cart_id8_9_0_,
+        productite0_.catalogue_id as catalogu9_9_0_,
+        productite0_.channel as channel4_9_0_,
+        productite0_.currency_id as currenc10_9_0_,
+        productite0_.order_detail_id as order_d11_9_0_,
+        productite0_.quantity as quantity5_9_0_,
+        productite0_.status as status6_9_0_,
+        productite0_.total_amount as total_am7_9_0_ 
+    from
+        product_item_arch productite0_ 
+    where
+        productite0_.product_item_id=?
+Hibernate: 
+    select
+        productite0_.product_item_id as product_1_9_0_,
+        productite0_.created_at as created_2_9_0_,
+        productite0_.updated_at as updated_3_9_0_,
+        productite0_.cart_id as cart_id8_9_0_,
+        productite0_.catalogue_id as catalogu9_9_0_,
+        productite0_.channel as channel4_9_0_,
+        productite0_.currency_id as currenc10_9_0_,
+        productite0_.order_detail_id as order_d11_9_0_,
+        productite0_.quantity as quantity5_9_0_,
+        productite0_.status as status6_9_0_,
+        productite0_.total_amount as total_am7_9_0_ 
+    from
+        product_item_arch productite0_ 
+    where
+        productite0_.product_item_id=?
+Hibernate: 
+    insert 
+    into
+        user_arch
+        (created_at, updated_at, first_name, last_name, user_id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_detail_arch
+        (created_at, updated_at, capture_at, capture_failure_reason, capture_retry_times, capture_status, channel, currency_id, payment_authorized_amount, payment_authorized_currency, payment_last_updated_at, payment_method, payment_platform, payment_provider, payment_status, process_lock, status, total_amount, user_id, order_detail_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        cart_arch
+        (created_at, updated_at, channel, currency_id, quantity, status, total_amount, user_id, cart_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_item_arch
+        (created_at, updated_at, cart_id, catalogue_id, channel, currency_id, order_detail_id, quantity, status, total_amount, product_item_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_item_arch
+        (created_at, updated_at, cart_id, catalogue_id, channel, currency_id, order_detail_id, quantity, status, total_amount, product_item_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    delete 
+    from
+        product_item 
+    where
+        product_item_id=?
+Hibernate: 
+    delete 
+    from
+        order_detail 
+    where
+        order_detail_id=?
+Hibernate: 
+    delete 
+    from
+        product_item 
+    where
+        product_item_id=?
+Hibernate: 
+    delete 
+    from
+        product_item 
+    where
+        product_item_id=?
+Hibernate: 
+    delete 
+    from
+        product_item 
+    where
+        product_item_id=?
+Hibernate: 
+    delete 
+    from
+        cart 
+    where
+        cart_id=?
+Hibernate: 
+    delete 
+    from
+        user 
+    where
+        user_id=?
+Hibernate: 
+    delete 
+    from
+        product_item 
+    where
+        product_item_id=?
+Hibernate: 
+    delete 
+    from
+        product_item 
+    where
+        product_item_id=?
+Hibernate: 
+    delete 
+    from
+        order_detail 
+    where
+        order_detail_id=?
+Hibernate: 
+    delete 
+    from
+        product_item 
+    where
+        product_item_id=?
+Hibernate: 
+    delete 
+    from
+        order_detail 
+    where
+        order_detail_id=?
+Hibernate: 
+    delete 
+    from
+        product_item 
+    where
+        product_item_id=?
+Hibernate: 
+    delete 
+    from
+        cart 
+    where
+        cart_id=?
+Hibernate: 
+    delete 
+    from
+        user 
+    where
+        user_id=?
+Hibernate: 
+    delete 
+    from
+        product_item 
+    where
+        product_item_id=?
+Hibernate: 
+    delete 
+    from
+        product_item 
+    where
+        product_item_id=?
+Hibernate: 
+    delete 
+    from
+        order_detail 
+    where
+        order_detail_id=?
+Hibernate: 
+    delete 
+    from
+        cart 
+    where
+        cart_id=?
+Hibernate: 
+    delete 
+    from
+        user 
+    where
+        user_id=?
+2020-05-01 15:23:55.923  INFO 18856 --- [nio-8060-exec-1] c.p.service.schedule.job.ScheduleJob     : First userId been processed: 1
+2020-05-01 15:23:55.923  INFO 18856 --- [nio-8060-exec-1] c.p.service.schedule.job.ScheduleJob     : Last userId been processed: 3
+2020-05-01 15:23:55.923  INFO 18856 --- [nio-8060-exec-1] c.p.service.schedule.job.ScheduleJob     : Housekeep detail of active tables: user = 3, cart = 3, orderDetail = 4, product_item = 10
+2020-05-01 15:23:55.923  INFO 18856 --- [nio-8060-exec-1] c.p.service.schedule.job.ScheduleJob     : Housekeep detail of archive tables: user_arch = 3, cart_arch = 3, order_detail_arch = 4, product_item_arch = 10
+Hibernate: 
+    insert 
+    into
+        housekeep_summary
+        (created_at, updated_at, copy_to, no_of_records_updated, remove_from, scheduled_job_finished_at, scheduled_job_name, scheduled_job_started_at, scheduler_instance_name, status, status_message, type) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        housekeep_summary
+        (created_at, updated_at, copy_to, no_of_records_updated, remove_from, scheduled_job_finished_at, scheduled_job_name, scheduled_job_started_at, scheduler_instance_name, status, status_message, type) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        housekeep_summary
+        (created_at, updated_at, copy_to, no_of_records_updated, remove_from, scheduled_job_finished_at, scheduled_job_name, scheduled_job_started_at, scheduler_instance_name, status, status_message, type) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        housekeep_summary
+        (created_at, updated_at, copy_to, no_of_records_updated, remove_from, scheduled_job_finished_at, scheduled_job_name, scheduled_job_started_at, scheduler_instance_name, status, status_message, type) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
