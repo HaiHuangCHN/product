@@ -33,7 +33,8 @@ public class Catalogue extends BaseEntity implements Serializable {
     @Column(name = "display_name", nullable = false)
     private String displayName;
 
-    @Column(name = "catagory", nullable = false)
+    // TODO test updatable = false
+    @Column(name = "catagory", nullable = false/* , updatable = false */)
     @Enumerated(EnumType.STRING)
     private CatagoryEnum catagory;
 

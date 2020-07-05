@@ -7,7 +7,7 @@ import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotNull;
 
 @MappedSuperclass
-public abstract class BaseEntity {
+public class BaseEntity {
 
     @Column(name = "created_at")
     @NotNull(message = "createdAt cannot be null")
@@ -17,19 +17,19 @@ public abstract class BaseEntity {
     @NotNull(message = "updatedAt cannot be null")
     private LocalDateTime updatedAt;
 
-    public LocalDateTime getCreatedAt() {
+    protected LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    protected void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public LocalDateTime getUpdatedAt() {
+    protected LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
+    protected void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 
