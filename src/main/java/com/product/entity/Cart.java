@@ -2,6 +2,7 @@ package com.product.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -17,13 +18,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "cart", schema = "product")
-public class Cart extends BaseEntity implements Serializable {
+public class Cart extends BaseEntity implements Serializable, Cloneable {
 
     /**
      * 
@@ -69,88 +69,88 @@ public class Cart extends BaseEntity implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cart", fetch = FetchType.EAGER)
     private Set<ProductItem> productItemList;
 
-    @Transient
-    private int productItemNum;
-
     public Cart() {
         super();
     }
 
-    protected Long getCartId() {
+    public Long getCartId() {
         return cartId;
     }
 
-    protected void setCartId(Long cartId) {
+    public void setCartId(Long cartId) {
         this.cartId = cartId;
     }
 
-    protected CartStatusEnum getStatus() {
+    public CartStatusEnum getStatus() {
         return status;
     }
 
-    protected void setStatus(CartStatusEnum status) {
+    public void setStatus(CartStatusEnum status) {
         this.status = status;
     }
 
-    protected ChannelEnum getChannel() {
+    public ChannelEnum getChannel() {
         return channel;
     }
 
-    protected void setChannel(ChannelEnum channel) {
+    public void setChannel(ChannelEnum channel) {
         this.channel = channel;
     }
 
-    protected Integer getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    protected void setQuantity(Integer quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
-    protected BigDecimal getTotalAmount() {
+    public BigDecimal getTotalAmount() {
         return totalAmount;
     }
 
-    protected void setTotalAmount(BigDecimal totalAmount) {
+    public void setTotalAmount(BigDecimal totalAmount) {
         this.totalAmount = totalAmount;
     }
 
-    protected Currency getCurrency() {
+    public Currency getCurrency() {
         return currency;
     }
 
-    protected void setCurrency(Currency currency) {
+    public void setCurrency(Currency currency) {
         this.currency = currency;
     }
 
-    protected User getUser() {
+    public User getUser() {
         return user;
     }
 
-    protected void setUser(User user) {
+    public void setUser(User user) {
         this.user = user;
     }
 
-    protected Set<ProductItem> getProductItemList() {
+    public Set<ProductItem> getProductItemList() {
         return productItemList;
     }
 
-    protected void setProductItemList(Set<ProductItem> productItemList) {
+    public void setProductItemList(Set<ProductItem> productItemList) {
         this.productItemList = productItemList;
     }
 
-    protected int getProductItemNum() {
+    public int getProductItemNum() {
         return productItemNum;
     }
 
-    protected void setProductItemNum(int productItemNum) {
+    public void setProductItemNum(int productItemNum) {
         this.productItemNum = productItemNum;
     }
 
-    @Override
-    public Cart clone() throws CloneNotSupportedException {
-        return (Cart) super.clone();
+    public Date getLatestUpdatedAt() {
+        return latestUpdatedAt;
+    }
+
+    public void setLatestUpdatedAt(Date latestUpdatedAt) {
+        this.latestUpdatedAt = latestUpdatedAt;
     }
 
     @Override
