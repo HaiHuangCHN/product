@@ -2,7 +2,6 @@ package com.product.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -135,22 +134,6 @@ public class Cart extends BaseEntity implements Serializable, Cloneable {
 
     public void setProductItemList(Set<ProductItem> productItemList) {
         this.productItemList = productItemList;
-    }
-
-    public int getProductItemNum() {
-        return productItemNum;
-    }
-
-    public void setProductItemNum(int productItemNum) {
-        this.productItemNum = productItemNum;
-    }
-
-    public Date getLatestUpdatedAt() {
-        return latestUpdatedAt;
-    }
-
-    public void setLatestUpdatedAt(Date latestUpdatedAt) {
-        this.latestUpdatedAt = latestUpdatedAt;
     }
 
     @Override

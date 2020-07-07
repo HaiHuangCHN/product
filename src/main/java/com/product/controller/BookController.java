@@ -40,7 +40,7 @@ public class BookController {
     private BookService bookService;
 
     @RequestMapping(value = "/add/or/update/book", method = RequestMethod.PUT)
-    public ResponseEntity<?> addBook(@RequestBody AddBookReq addBookReq) {
+    public ResponseEntity<String> addBook(@RequestBody AddBookReq addBookReq) {
         bookService.saveOrUpdate(addBookReq);
         return ResponseEntity.status(HttpStatus.SC_OK).body("Success");
     }

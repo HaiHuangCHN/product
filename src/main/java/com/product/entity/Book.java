@@ -26,7 +26,7 @@ public class Book extends BaseEntity implements Serializable {
     private Long bookId;
 
     @Column(name = "title", nullable = false)
-    @Size(min = 3, max = 3, message = "Size should be valid")
+    @Size(message = "title should be valid")
     private String title;
 
     @Column(name = "author", nullable = false)
