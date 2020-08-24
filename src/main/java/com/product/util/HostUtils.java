@@ -5,6 +5,12 @@ import java.net.UnknownHostException;
 
 import org.springframework.util.StringUtils;
 
+/**
+ * InetAddress.getLocalHost().getHostAddress().toString()// 10.250.75.167, get
+ * IP address
+ * 
+ * @return
+ */
 public class HostUtils {
 
     private static String hostName;
