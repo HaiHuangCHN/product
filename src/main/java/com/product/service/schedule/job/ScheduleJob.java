@@ -134,7 +134,7 @@ public class ScheduleJob implements Job {
         Map<String, StringBuilder> resultMap = new HashMap<String, StringBuilder>();
         List<HousekeepSummary> housekeepSummaryList = new LinkedList<>();
 
-        if (scheduleJobConfig.getEnableArchiveDatabaseRecordJob()) {
+        if (scheduleJobConfig.getEnableArchiveActiveTableRecordJob()) {
             try {
                 housekeepJob.archiveData(now, resultMap);
                 // step 4: persist housekeep result when success

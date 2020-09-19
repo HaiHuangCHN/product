@@ -8,18 +8,11 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "config", schema = "product")
-public class Config extends BaseEntity implements Serializable {
-
-    /**
-     * 
-     */
-    private static final long serialVersionUID = 1L;
+public class Config extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,7 +40,7 @@ public class Config extends BaseEntity implements Serializable {
     }
 
     public static enum CatagoryEnum {
-        GENERAL, HOUSEKEEP, QUARTZ, RABBITMQ, SWAGGER, RESTCLIENT, REPORT;
+        GENERAL, SPRING, RESTCLIENT, RABBITMQ, SWAGGER, QUARTZ, SCHEDULE_JOB;
         private CatagoryEnum() {
         }
     }

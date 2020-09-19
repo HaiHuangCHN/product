@@ -51,7 +51,7 @@ public class HousekeepJob {
         UserArch userArch = null;
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.getConfiguration().setFieldMatchingEnabled(true).setFieldAccessLevel(Configuration.AccessLevel.PRIVATE).setMatchingStrategy(MatchingStrategies.STANDARD);
-        LocalDateTime updatedAt = now.minusHours(scheduleJobConfig.getDatabaseRecordRetentionPeriod());
+        LocalDateTime updatedAt = now.minusHours(scheduleJobConfig.getActiveTableRecordRetentionPeriod());
         userListToBeDeleted = userRepository.findTop10000ByUpdatedAtBefore(updatedAt);
 
         // step 1: archive records into archive tables
