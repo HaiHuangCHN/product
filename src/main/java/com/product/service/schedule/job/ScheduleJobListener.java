@@ -11,11 +11,6 @@ import org.slf4j.LoggerFactory;
  * 1. it won't support persistence since 2.x<br>
  * 2. it not supports distributed system<br>
  * 3. it only support to be registered when boot application
- * 
- * @author Huang, Hai
- * @date Feb 23, 2020 12:11:05 AM
- * @email hai.huang.a@outlook.com
- *
  */
 public class ScheduleJobListener implements JobListener {
 
