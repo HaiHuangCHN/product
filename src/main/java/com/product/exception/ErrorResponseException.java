@@ -1,45 +1,35 @@
 package com.product.exception;
 
 public class ErrorResponseException extends Exception {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private String code;
-	private String message;
-	private String detail;
 
-	public ErrorResponseException(String code, String message, String detail) {
-		this.code = code;
-		this.message = message;
-		this.detail = detail;
-	}
+    /**
+     * 
+     */
+    private static final long serialVersionUID = -6602852784285282083L;
 
-	public String getCode() {
-		return code;
-	}
+    private final String code;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    private final String message;
 
-	public String getMessage() {
-		return message;
-	}
+    private final String detail;
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+    public ErrorResponseException(String code, String message, String detail) {
+        this.code = code;
+        this.message = message;
+        this.detail = detail;
+    }
 
-	public String getDetail() {
-		if (this.detail == null) {
-			this.detail = this.message;
-		}
-		return detail;
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public void setDetail(String detail) {
-		this.detail = detail;
-	}
+    @Override
+    public String getMessage() {
+        return message;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
 
 }
