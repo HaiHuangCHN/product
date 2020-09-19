@@ -34,9 +34,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
  * Way 1
- * 
- * @author Huang, Hai
- *
  */
 //@Configuration
 //@EnableWebSecurity
@@ -80,9 +77,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
  * Way 2
- * 
- * @author Huang, Hai
- *
  */
 //@Configuration
 //@EnableWebSecurity
@@ -117,9 +111,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
  * Final solution
- * 
- * @author Huang, Hai
- *
  */
 @Configuration
 @EnableWebSecurity

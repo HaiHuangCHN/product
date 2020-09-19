@@ -26,7 +26,7 @@ import com.product.util.RetentionPeriodValidation;
 
 @Validated
 @Configuration
-@ConfigurationProperties(prefix = "quartz")
+@ConfigurationProperties(prefix = "job")
 @DependsOn("systemConfig")
 public class ScheduleJobConfig {
 
@@ -61,22 +61,17 @@ public class ScheduleJobConfig {
     private String deleteHousekeepSummaryRecordJobCron;
 
     @NotNull
-    private Boolean enableArchiveDatabaseRecordJob;
+    private Boolean enableArchiveActiveTableRecordJob;
 
     @RetentionPeriodValidation
-    private Integer databaseRecordRetentionPeriod;
+    private Integer activeTableRecordRetentionPeriod;
 
     @NotNull
-    private String archiveDatabaseRecordJobCron;
+    private String archiveActiveTableRecordJobCron;
 
     /**
      * Extends org.springframework.scheduling.quartz.SpringBeanJobFactory to
      * override createJobInstance() to create a spring-managed Job Instance
-     * 
-     * @author Huang, Hai
-     * @date Oct 25, 2019 5:07:12 PM
-     * @email hai.huang.a@outlook.com
-     *
      */
     public static class AutowiringAdaptableJobFactory extends AdaptableJobFactory implements ApplicationContextAware {
 
@@ -99,10 +94,6 @@ public class ScheduleJobConfig {
      * Configure jobFactory instance<br>
      * see {@link AutowiringAdaptableJobFactory}
      * 
-     * @author Huang, Hai
-     * @date Oct 25, 2019 5:15:48 PM
-     * @email hai.huang.a@outlook.com
-     *
      * @param applicationContext Spring Application Context
      * @return customized jobFactory bean
      */
@@ -227,28 +218,28 @@ public class ScheduleJobConfig {
         this.configurableEnvironment = configurableEnvironment;
     }
 
-    public Boolean getEnableArchiveDatabaseRecordJob() {
-        return enableArchiveDatabaseRecordJob;
+    public Boolean getEnableArchiveActiveTableRecordJob() {
+        return enableArchiveActiveTableRecordJob;
     }
 
-    public void setEnableArchiveDatabaseRecordJob(Boolean enableArchiveDatabaseRecordJob) {
-        this.enableArchiveDatabaseRecordJob = enableArchiveDatabaseRecordJob;
+    public void setEnableArchiveActiveTableRecordJob(Boolean enableArchiveActiveTableRecordJob) {
+        this.enableArchiveActiveTableRecordJob = enableArchiveActiveTableRecordJob;
     }
 
-    public Integer getDatabaseRecordRetentionPeriod() {
-        return databaseRecordRetentionPeriod;
+    public Integer getActiveTableRecordRetentionPeriod() {
+        return activeTableRecordRetentionPeriod;
     }
 
-    public void setDatabaseRecordRetentionPeriod(Integer databaseRecordRetentionPeriod) {
-        this.databaseRecordRetentionPeriod = databaseRecordRetentionPeriod;
+    public void setActiveTableRecordRetentionPeriod(Integer activeTableRecordRetentionPeriod) {
+        this.activeTableRecordRetentionPeriod = activeTableRecordRetentionPeriod;
     }
 
-    public String getArchiveDatabaseRecordJobCron() {
-        return archiveDatabaseRecordJobCron;
+    public String getArchiveActiveTableRecordJobCron() {
+        return archiveActiveTableRecordJobCron;
     }
 
-    public void setArchiveDatabaseRecordJobCron(String archiveDatabaseRecordJobCron) {
-        this.archiveDatabaseRecordJobCron = archiveDatabaseRecordJobCron;
+    public void setArchiveActiveTableRecordJobCron(String archiveActiveTableRecordJobCron) {
+        this.archiveActiveTableRecordJobCron = archiveActiveTableRecordJobCron;
     }
 
 }

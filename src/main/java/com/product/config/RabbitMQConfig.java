@@ -16,13 +16,11 @@ public class RabbitMQConfig {
 
     @Bean
     public Queue defaultBookQueue() {
-        // First 第一个是 QUEUE 的名字,第二个是消息是否需要持久化处理
-        return new Queue(DEFAULT_BOOK_QUEUE, true);
+        return new Queue(DEFAULT_BOOK_QUEUE, false);
     }
 
     @Bean
     public Queue manualBookQueue() {
-        // First 第一个是 QUEUE 的名字,第二个是消息是否需要持久化处理
         return new Queue(MANUAL_BOOK_QUEUE, true);
     }
 }

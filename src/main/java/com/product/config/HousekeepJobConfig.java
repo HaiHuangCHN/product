@@ -9,6 +9,9 @@
 //
 //import com.product.util.RetentionPeriodValidation;
 //
+///**
+// * Legacy code, just to AEP testing purpose
+// */
 //@Validated
 //@Configuration
 //@ConfigurationProperties(prefix = "housekeep")
@@ -17,6 +20,10 @@
 //
 //    @NotNull
 //    private Boolean enableHousekeepSummaryTableJob;
+//
+//    @NotNull
+//    @RetentionPeriodValidation
+//    private Integer summaryTableRetentionPeriod;
 //
 //    public Boolean getEnableHousekeepSummaryTableJob() {
 //        return enableHousekeepSummaryTableJob;
