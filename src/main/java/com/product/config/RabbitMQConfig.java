@@ -16,7 +16,7 @@ public class RabbitMQConfig {
 
     @Bean
     public Queue defaultBookQueue() {
-        return new Queue(DEFAULT_BOOK_QUEUE, false);
+        return new Queue(DEFAULT_BOOK_QUEUE, true);
     }
 
     @Bean
