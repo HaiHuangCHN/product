@@ -58,7 +58,7 @@ public class HousekeepJob {
         for (User user : userListToBeDeleted) {
             userArch = modelMapper.map(user, UserArch.class);
             userArchRepository.save(userArch);
-//            //not work, but why?
+//            TODO not work, but why?
 //            entityManager.merge(userArch);
 //            entityManager.persist(userArch);
             entityManager.flush();
@@ -80,6 +80,7 @@ public class HousekeepJob {
 
         // step 2: delete records from active tables
         userRepository.deleteAll(userListToBeDeleted);
+        entityManager.flush();
 
         // step 3: verify archived VS inserted
         verifyResult(userListToBeDeleted, userArchListInserted);
@@ -104,7 +105,7 @@ public class HousekeepJob {
      * @param userArchListInserted
      * @throws Exception
      */
-    public void verifyResult(List<User> userListDeleted, List<UserArch> userArchListInserted) throws Exception {
+    private void verifyResult(List<User> userListDeleted, List<UserArch> userArchListInserted) throws Exception {
 
         userTotal += userListDeleted.size();
         cartTotal += userListDeleted.size();
