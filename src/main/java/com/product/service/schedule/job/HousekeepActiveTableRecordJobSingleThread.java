@@ -23,7 +23,7 @@ import com.product.repository.UserArchRepository;
 import com.product.repository.UserRepository;
 
 @Service
-public class HousekeepJob {
+public class HousekeepActiveTableRecordJobSingleThread {
 
     private long userTotal = 0L, cartTotal = 0L, orderDetailTotal = 0L, productItemTotal = 0L;
 

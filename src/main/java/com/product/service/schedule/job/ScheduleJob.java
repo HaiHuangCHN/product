@@ -46,7 +46,7 @@ public class ScheduleJob implements Job {
     private ScheduleJobConfig scheduleJobConfig;
 
     @Autowired
-    private HousekeepJob housekeepJob;
+    private HousekeepActiveTableRecordJobSingleThread housekeepJob;
 
     @Autowired
     private HousekeepSummaryRepository housekeepSummaryRepository;
