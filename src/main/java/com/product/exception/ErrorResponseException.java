@@ -5,7 +5,7 @@ public class ErrorResponseException extends Exception {
     /**
      * 
      */
-    private static final long serialVersionUID = -6602852784285282083L;
+    private static final long serialVersionUID = 3463097138583916529L;
 
     private final String code;
 
