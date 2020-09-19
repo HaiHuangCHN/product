@@ -56,10 +56,6 @@ public class ScheduleJob implements Job {
 //     * As long as scheduler triggers the job, the method will execute as the
 //     * following implementation
 //     * 
-//     * @author Huang, Hai
-//     * @date Feb 6, 2020 6:22:10 PM
-//     * @email hai.huang.a@outlook.com
-//     *
 //     * @param jobExecutionContext Job execution context
 //     * @throws JobExecutionException
 //     */
