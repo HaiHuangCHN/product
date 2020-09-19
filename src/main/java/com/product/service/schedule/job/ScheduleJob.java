@@ -91,7 +91,7 @@ public class ScheduleJob implements Job {
             if (clazz != null) {
                 Object obj = applicationContext.getBean(clazz);
                 Method method = clazz.getDeclaredMethod(jobDataMap.getString("methodName"));
-                if (method != null && obj != null) {
+                if (method != null) {
                     logger.info("Execute task! job group name: {}, job name: {}", jobGroupName, jobName);
                     method.invoke(obj);
                 }

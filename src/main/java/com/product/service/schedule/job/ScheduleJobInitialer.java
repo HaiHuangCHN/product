@@ -37,43 +37,43 @@ public class ScheduleJobInitialer implements ApplicationRunner {
 
         try {
             scheduleJobManager.scheduleDeleteAll();
-//            // schedule job 1
-//            scheduleJobManager.addJob(ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_1.getJobName(), ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_1.getJobGroupName(),
-//                    ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_1.getTriggerName(), ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_1.getTriggerGroupName(),
-//                    ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_1.getDescription(), scheduleJobConfig.getScheduleJobOneCron(), ScheduleJob.class, "executeScheduleJobOne");
-//            scheduleJobManager.scheduleUpdateCorn(ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_1.getTriggerName(), ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_1.getTriggerGroupName(),
-//                    scheduleJobConfig.getScheduleJobOneCron());
-//
-//            // schedule job 2
-//            productScheduleJobManager.addJob(ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_2.getJobName(), ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_2.getJobGroupName(),
-//                    ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_2.getTriggerName(), ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_2.getTriggerGroupName(),
-//                    productScheduleJobConfig.getScheduleJobTwoCron(), ProductScheduleJob.class, "executeScheduleJobTwo");
-//            productScheduleJobManager.scheduleUpdateCorn(ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_2.getTriggerName(), ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_2.getTriggerGroupName(),
-//                    productScheduleJobConfig.getScheduleJobTwoCron());
-//
-//            // schedule job 2
-//            productScheduleJobManager.addJob(ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_3.getJobName(), ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_3.getJobGroupName(),
-//                    ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_3.getTriggerName(), ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_3.getTriggerGroupName(),
-//                    productScheduleJobConfig.getScheduleJobThreeCron(), ProductScheduleJob.class, "executeScheduleJobThree");
-//            productScheduleJobManager.scheduleUpdateCorn(ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_3.getTriggerName(), ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_3.getTriggerGroupName(),
-//                    productScheduleJobConfig.getScheduleJobThreeCron());
-//
-//            // Delete housekeep_summary record Job
-//            scheduleJobManager.addJob(ScheduleJobEnum.DELETE_HOUSEKEEP_SUMMARY_RECORD_JOB.getJobName(), ScheduleJobEnum.DELETE_HOUSEKEEP_SUMMARY_RECORD_JOB.getJobGroupName(),
-//                    ScheduleJobEnum.DELETE_HOUSEKEEP_SUMMARY_RECORD_JOB.getTriggerName(), ScheduleJobEnum.DELETE_HOUSEKEEP_SUMMARY_RECORD_JOB.getTriggerGroupName(),
-//                    scheduleJobConfig.getDeleteHousekeepSummaryRecordJobCron(), ScheduleJob.class, "executeDeleteHousekeepSummaryRecordJob");
-//            scheduleJobManager.scheduleUpdateCorn(ScheduleJobEnum.DELETE_HOUSEKEEP_SUMMARY_RECORD_JOB.getTriggerName(),
-//                    ScheduleJobEnum.DELETE_HOUSEKEEP_SUMMARY_RECORD_JOB.getTriggerGroupName(), scheduleJobConfig.getDeleteHousekeepSummaryRecordJobCron());
-//
-//            // Archive Database Record Job
-//            scheduleJobManager.addJob(ScheduleJobEnum.ARCHIVE_DATABASE_RECORD_JOB.getJobName(), ScheduleJobEnum.ARCHIVE_DATABASE_RECORD_JOB.getJobGroupName(),
-//                    ScheduleJobEnum.ARCHIVE_DATABASE_RECORD_JOB.getTriggerName(), ScheduleJobEnum.ARCHIVE_DATABASE_RECORD_JOB.getTriggerGroupName(),
-//                    scheduleJobConfig.getArchiveDatabaseRecordJobCron(), ScheduleJob.class, "executeArchiveDatabaseRecordJob");
-//            scheduleJobManager.scheduleUpdateCorn(ScheduleJobEnum.ARCHIVE_DATABASE_RECORD_JOB.getTriggerName(), ScheduleJobEnum.ARCHIVE_DATABASE_RECORD_JOB.getTriggerGroupName(),
-//                    scheduleJobConfig.getArchiveDatabaseRecordJobCron());
-//            scheduleJobManager.standByScheduler();
-//            scheduleJobManager.shutDownScheduler();
-//            scheduleJobManager.startScheduler();
+            // schedule job 1
+            scheduleJobManager.addJob(ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_1.getJobName(), ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_1.getJobGroupName(),
+                    ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_1.getTriggerName(), ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_1.getTriggerGroupName(),
+                    ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_1.getDescription(), scheduleJobConfig.getScheduleJobOneCron(), ScheduleJob.class, "executeScheduleJobOne");
+            scheduleJobManager.scheduleUpdateCorn(ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_1.getTriggerName(), ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_1.getTriggerGroupName(),
+                    scheduleJobConfig.getScheduleJobOneCron());
+
+            // schedule job 2
+            scheduleJobManager.addJob(ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_2.getJobName(), ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_2.getJobGroupName(),
+                    ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_2.getTriggerName(), ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_2.getTriggerGroupName(),
+                    productScheduleJobConfig.getScheduleJobTwoCron(), ProductScheduleJob.class, "executeScheduleJobTwo");
+            scheduleJobManager.scheduleUpdateCorn(ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_2.getTriggerName(), ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_2.getTriggerGroupName(),
+                    productScheduleJobConfig.getScheduleJobTwoCron());
+
+            // schedule job 2
+            scheduleJobManager.addJob(ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_3.getJobName(), ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_3.getJobGroupName(),
+                    ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_3.getTriggerName(), ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_3.getTriggerGroupName(),
+                    productScheduleJobConfig.getScheduleJobThreeCron(), ProductScheduleJob.class, "executeScheduleJobThree");
+            scheduleJobManager.scheduleUpdateCorn(ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_3.getTriggerName(), ScheduleJobEnum.PRODUCT_SCHEDULE_JOB_3.getTriggerGroupName(),
+                    productScheduleJobConfig.getScheduleJobThreeCron());
+
+            // Delete housekeep_summary record Job
+            scheduleJobManager.addJob(ScheduleJobEnum.DELETE_HOUSEKEEP_SUMMARY_RECORD_JOB.getJobName(), ScheduleJobEnum.DELETE_HOUSEKEEP_SUMMARY_RECORD_JOB.getJobGroupName(),
+                    ScheduleJobEnum.DELETE_HOUSEKEEP_SUMMARY_RECORD_JOB.getTriggerName(), ScheduleJobEnum.DELETE_HOUSEKEEP_SUMMARY_RECORD_JOB.getTriggerGroupName(),
+                    scheduleJobConfig.getDeleteHousekeepSummaryRecordJobCron(), ScheduleJob.class, "executeDeleteHousekeepSummaryRecordJob");
+            scheduleJobManager.scheduleUpdateCorn(ScheduleJobEnum.DELETE_HOUSEKEEP_SUMMARY_RECORD_JOB.getTriggerName(),
+                    ScheduleJobEnum.DELETE_HOUSEKEEP_SUMMARY_RECORD_JOB.getTriggerGroupName(), scheduleJobConfig.getDeleteHousekeepSummaryRecordJobCron());
+
+            // Archive Database Record Job
+            scheduleJobManager.addJob(ScheduleJobEnum.ARCHIVE_DATABASE_RECORD_JOB.getJobName(), ScheduleJobEnum.ARCHIVE_DATABASE_RECORD_JOB.getJobGroupName(),
+                    ScheduleJobEnum.ARCHIVE_DATABASE_RECORD_JOB.getTriggerName(), ScheduleJobEnum.ARCHIVE_DATABASE_RECORD_JOB.getTriggerGroupName(),
+                    scheduleJobConfig.getArchiveActiveTableRecordJobCron(), ScheduleJob.class, "executeArchiveDatabaseRecordJob");
+            scheduleJobManager.scheduleUpdateCorn(ScheduleJobEnum.ARCHIVE_DATABASE_RECORD_JOB.getTriggerName(), ScheduleJobEnum.ARCHIVE_DATABASE_RECORD_JOB.getTriggerGroupName(),
+                    scheduleJobConfig.getArchiveActiveTableRecordJobCron());
+            scheduleJobManager.standByScheduler();
+            scheduleJobManager.shutDownScheduler();
+            scheduleJobManager.startScheduler();
         } catch (Exception e) {
             logger.error("Schedule job fails to execute due to exception", e);
         }
