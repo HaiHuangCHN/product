@@ -1,8 +1,5 @@
 package com.product.data;
 
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -14,13 +11,11 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.product.config.ScheduleJobConfig;
 import com.product.costant.ErrorCodeEnum;
 import com.product.entity.Book;
 import com.product.entity.Cart;
 import com.product.entity.Catalogue;
 import com.product.entity.Currency;
-import com.product.entity.HousekeepSummary;
 import com.product.entity.OrderDetail;
 import com.product.entity.User;
 import com.product.exception.ErrorResponseException;
@@ -28,7 +23,6 @@ import com.product.repository.BookRepository;
 import com.product.repository.CartRepository;
 import com.product.repository.CatalogueRepository;
 import com.product.repository.CurrencyRepository;
-import com.product.repository.HousekeepSummaryRepository;
 import com.product.repository.OrderDetailRepository;
 import com.product.repository.UserRepository;
 
