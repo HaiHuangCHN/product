@@ -78,7 +78,7 @@ public class ScheduleJob implements Job {
      * One of the business usages can be like the following
      */
     @Autowired
-    ApplicationContext applicationContext;
+    private ApplicationContext applicationContext;
 
     @Override
     public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
