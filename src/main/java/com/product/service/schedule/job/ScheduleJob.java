@@ -9,14 +9,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.quartz.DisallowConcurrentExecution;
 import org.quartz.Job;
 import org.quartz.JobDataMap;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.quartz.PersistJobDataAfterExecution;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
@@ -40,7 +40,7 @@ import com.product.util.TimeUtils;
 @PersistJobDataAfterExecution
 public class ScheduleJob implements Job {
 
-    private static final Logger logger = LoggerFactory.getLogger(ScheduleJob.class);
+    private static final Logger logger = LogManager.getLogger(ScheduleJob.class);
 
     @Autowired
     private ScheduleJobConfig scheduleJobConfig;
@@ -117,8 +117,7 @@ public class ScheduleJob implements Job {
     @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor = Exception.class)
     public void executeDeleteHousekeepSummaryRecordJob() {
         if (scheduleJobConfig.getEnableDeleteHousekeepSummaryRecordJob()) {
-            LocalDateTime updatedAt = ZonedDateTime.now().withZoneSameInstant(ZoneId.of("UTC")).toLocalDateTime()
-                    .minusSeconds(scheduleJobConfig.getHousekeepSummaryRecordRetentionPeriod());
+            LocalDateTime updatedAt = ZonedDateTime.now().withZoneSameInstant(ZoneId.of("UTC")).toLocalDateTime().minusSeconds(scheduleJobConfig.getHousekeepSummaryRecordRetentionPeriod());
             List<HousekeepSummary> deletedList = housekeepSummaryRepository.deleteByUpdatedAtBefore(updatedAt);
             // simulate roll back
             // throw new ErrorResponseException("test", "test", "test");
@@ -150,10 +149,10 @@ public class ScheduleJob implements Job {
                 e.printStackTrace();
                 logger.error(e.toString());
                 String statuMsg = e.getMessage().length() > 100 ? e.getMessage().substring(0, 100) : e.getMessage();
-                housekeepSummaryList.add(OtherUtils.genHousekeepResult(TableNameEnum.USER.getArchiveTableName(), TableNameEnum.USER.getActiveTableName(), 0L,
-                        HousekeepSummary.StatusEnum.FAIL, statuMsg, now));
-                housekeepSummaryList.add(OtherUtils.genHousekeepResult(TableNameEnum.CART.getArchiveTableName(), TableNameEnum.CART.getActiveTableName(), 0L,
-                        HousekeepSummary.StatusEnum.FAIL, statuMsg, now));
+                housekeepSummaryList
+                        .add(OtherUtils.genHousekeepResult(TableNameEnum.USER.getArchiveTableName(), TableNameEnum.USER.getActiveTableName(), 0L, HousekeepSummary.StatusEnum.FAIL, statuMsg, now));
+                housekeepSummaryList
+                        .add(OtherUtils.genHousekeepResult(TableNameEnum.CART.getArchiveTableName(), TableNameEnum.CART.getActiveTableName(), 0L, HousekeepSummary.StatusEnum.FAIL, statuMsg, now));
                 housekeepSummaryList.add(OtherUtils.genHousekeepResult(TableNameEnum.ORDER_DETAIL.getArchiveTableName(), TableNameEnum.ORDER_DETAIL.getActiveTableName(), 0L,
                         HousekeepSummary.StatusEnum.FAIL, statuMsg, now));
                 housekeepSummaryList.add(OtherUtils.genHousekeepResult(TableNameEnum.PRODUCT_ITEM.getArchiveTableName(), TableNameEnum.PRODUCT_ITEM.getActiveTableName(), 0L,

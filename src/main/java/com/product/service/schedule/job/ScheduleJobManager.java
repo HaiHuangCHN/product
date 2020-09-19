@@ -21,15 +21,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.product.model.commom.ScheduleJobModel;
 
 /**
- * TODO optimize Quartz to follow the best pratice
+ * TODO optimize Quartz to follow the best practice
  */
 @Service
-@Transactional(rollbackFor = Exception.class)
 public class ScheduleJobManager {
 
     private static final Logger logger = LoggerFactory.getLogger(ScheduleJobManager.class);
