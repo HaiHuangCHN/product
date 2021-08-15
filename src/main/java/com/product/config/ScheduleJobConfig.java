@@ -70,19 +70,27 @@ public class ScheduleJobConfig {
     private String archiveActiveTableRecordJobCron;
 
     /**
-     * Extends org.springframework.scheduling.quartz.SpringBeanJobFactory to
-     * override createJobInstance() to create a spring-managed Job Instance
+     * The SpringBeanJobFactory allows you to inject properties from the scheduler
+     * context, job data map and trigger data entries into the job bean. But there
+     * is no way out of the box to inject beans from the application context.
+     * 
+     * So I came up with the factory bean below that extends the
+     * SpringBeanJobFactory to add auto-wiring support:<br>
+     * (Extends org.springframework.scheduling.quartz.SpringBeanJobFactory to
+     * override createJobInstance() to create a spring-managed scheduler Instance)
+     * 
+     * @see http://www.btmatthews.com/blog/2011/inject-application-context+dependencies-in-quartz-job-beans.html
      */
-    public static class AutowiringAdaptableJobFactory extends AdaptableJobFactory implements ApplicationContextAware {
+    public static final class AutowiringAdaptableJobFactory extends AdaptableJobFactory implements ApplicationContextAware {
 
         private AutowireCapableBeanFactory beanFactory;
 
-        @Override // implements ApplicationContextAware
+        @Override // Implements ApplicationContextAware
         public void setApplicationContext(final ApplicationContext applicatioinContext) {
             beanFactory = applicatioinContext.getAutowireCapableBeanFactory();
         }
 
-        @Override // extends AdaptableJobFactory
+        @Override // Extends AdaptableJobFactory
         protected Object createJobInstance(final TriggerFiredBundle bundle) throws Exception {
             final Object jobInstance = super.createJobInstance(bundle);
             beanFactory.autowireBean(jobInstance);
@@ -98,7 +106,7 @@ public class ScheduleJobConfig {
      * @return customized jobFactory bean
      */
     @Bean
-    public JobFactory getJobFactory(ApplicationContext applicationContext) {
+    public JobFactory springBeanJobFactory(ApplicationContext applicationContext) {
         AutowiringAdaptableJobFactory jobFactory = new AutowiringAdaptableJobFactory();
         jobFactory.setApplicationContext(applicationContext);
         return jobFactory;
@@ -118,8 +126,8 @@ public class ScheduleJobConfig {
      * @param dataSource data source instance
      * @return
      */
-    @Bean(destroyMethod = "destroy", autowire = Autowire.NO)
-    public SchedulerFactoryBean schedulerFactoryBean(JobFactory jobFactory, DataSource dataSource) {
+    @Bean(destroyMethod = "destroy", autowire = Autowire.NO) // TODO What does it mean destroyMethod = "destroy", autowire = Autowire.NO?
+    public SchedulerFactoryBean scheduler(JobFactory jobFactory, DataSource dataSource) {
         SchedulerFactoryBean schedulerFactoryBean = new SchedulerFactoryBean();
         // Delegate Spring customized jobFactory to be managed by Scheduler
         schedulerFactoryBean.setJobFactory(jobFactory);
@@ -130,7 +138,7 @@ public class ScheduleJobConfig {
         schedulerFactoryBean.setDataSource(dataSource);
         schedulerFactoryBean.setApplicationContextSchedulerContextKey("applicationContext");
         // Way 1: If we configure Quartz using DB, then use the following:
-        Properties quartzProperties = (Properties) configurableEnvironment.getPropertySources().get((Constants.CONFIG)).getSource();
+        Properties quartzProperties = (Properties) configurableEnvironment.getPropertySources().get(Constants.CONFIG).getSource();
         schedulerFactoryBean.setQuartzProperties(quartzProperties);
 //        // Way 2: If we configure Quartz using 'quartz.properties' file in class path, then use
 //        // the following:

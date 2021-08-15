@@ -119,7 +119,7 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor = Exception.class)
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.REPEATABLE_READ, rollbackFor = Exception.class)
     public CartResp addProductItem(AddProductItemReq addProductItemReq) throws ErrorResponseException {
         LocalDateTime currentTime = TimeUtils.getUtcTime();
         ProductItem productItem = new ProductItem();
@@ -140,6 +140,12 @@ public class CartServiceImpl implements CartService {
         productItem.setUpdatedAt(currentTime);
         productItemRepository.save(productItem);
 
+        saveCart(cart, catalogue, currentTime, productItem);
+
+        return constructCartResp(cart.getCartId());
+    }
+
+    private void saveCart(Cart cart, Catalogue catalogue, LocalDateTime currentTime, ProductItem productItem) {
         cart.setQuantity(cart.getQuantity() + productItem.getQuantity());
         cart.setTotalAmount(cart.getTotalAmount().add(productItem.getTotalAmount()));
         cart.setUpdatedAt(currentTime);
@@ -148,8 +154,6 @@ public class CartServiceImpl implements CartService {
         catalogue.setQuantity(catalogue.getQuantity() - productItem.getQuantity());
         catalogue.setUpdatedAt(currentTime);
         catalogueRepository.save(catalogue);
-
-        return constructCartResp(cart.getCartId());
     }
 
     @Override

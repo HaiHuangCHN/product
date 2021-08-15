@@ -58,7 +58,7 @@ public class CartController {
     }
 
     @RequestMapping(value = "/add/product/item", method = RequestMethod.POST)
-    public ResponseEntity<?> allProductItem(@RequestBody @Valid AddProductItemReq addProductItemReq, Errors errors) throws ErrorResponseException, InputParameterException {
+    public ResponseEntity<CartResp> allProductItem(@RequestBody @Valid AddProductItemReq addProductItemReq, Errors errors) throws ErrorResponseException, InputParameterException {
         cartService.validateInboundRequest(errors);
         return ResponseEntity.status(HttpStatus.SC_OK).body(cartService.addProductItem(addProductItemReq));
     }
